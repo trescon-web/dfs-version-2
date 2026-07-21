@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <!-- Julius Bär wordmark in elegant serif -->
+  <text x="100" y="32" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-weight="400" font-size="24" fill="#003A5D" letter-spacing="1.5">Julius Bär</text>
+  <!-- Subtle underline accent -->
+  <line x1="30" y1="40" x2="170" y2="40" stroke="#003A5D" stroke-width="0.6"/>
+</svg>
