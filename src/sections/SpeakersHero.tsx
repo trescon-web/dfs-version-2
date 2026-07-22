@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Mic, Search } from "lucide-react";
 
@@ -6,7 +7,7 @@ export default function SpeakersHero() {
   return (
     <section 
       className="relative h-[250px] overflow-hidden bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/03/Speakers_hero_banner-scaled.webp')" }}
+      style={{ backgroundImage: `url(${getAssetPath("/images/dfs_speakers_panel.webp")})` }}
     >
       {/* Dark overlay for extra readability */}
       <div className="absolute inset-0 bg-slate-950/45 z-0" />

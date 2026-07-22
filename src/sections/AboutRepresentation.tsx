@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function AboutRepresentation() {
@@ -6,7 +7,7 @@ export default function AboutRepresentation() {
     <section 
       className="relative py-28 bg-[#022129] bg-cover bg-center no-repeat flex items-center justify-center border-t border-white/5"
       style={{
-        backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/01/Global-representation-Bg-Img.svg')",
+        backgroundImage: `url(${getAssetPath("/images/world_map.png")})`,
       }}
     >
       {/* Soft gradient overlay to blend map silhouette */}

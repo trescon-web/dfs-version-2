@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
@@ -37,7 +38,7 @@ export default function DFFWGovernor() {
             className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 max-w-sm lg:max-w-none w-full"
           >
             <img 
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/03/H-E-ESSA-KAZIM-new-img.webp" 
+              src={getAssetPath("/images/speaker_he_essa_kazim.png")} 
               alt="H.E. Essa Kazim, Governor of DIFC" 
               className="w-full h-auto object-cover block hover:scale-105 transition-transform duration-700"
             />

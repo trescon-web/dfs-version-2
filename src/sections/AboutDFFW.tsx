@@ -36,7 +36,7 @@ export default function AboutDFFW() {
           {/* Logo */}
           <div className="mb-6 mt-2">
             <img 
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/01/Dubai-Future-Finance-Week-Logo.svg" 
+              src={getAssetPath("/images/Dffw-New-Logo.svg")} 
               alt="Dubai Future Finance Week Logo" 
               className="h-14 w-auto object-contain block brightness-0 invert"
             />

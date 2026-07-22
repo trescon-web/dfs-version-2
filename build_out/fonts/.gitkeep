@@ -1,0 +1,9 @@
+# Place your Lufga font files in this folder.
+# Supported file names:
+# - Lufga-Regular.woff2
+# - Lufga-Medium.woff2
+# - Lufga-SemiBold.woff2
+# - Lufga-Bold.woff2
+# - Lufga-Black.woff2
+#
+# (Woff or TTF formats are also supported by the @font-face rules).

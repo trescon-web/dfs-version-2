@@ -1,5 +1,5 @@
-import { getAssetPath } from "@/utils/assetPath";
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Check, X, ArrowUpRight } from "lucide-react";
 

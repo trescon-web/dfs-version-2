@@ -80,7 +80,7 @@ export default function LaunchpadStage() {
               className="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/50 bg-white p-2 order-2 lg:order-1"
             >
               <img
-                src="https://dubaifintechsummit.com/wp-content/uploads/2026/02/Join-a-premier-showcase-img-New.webp"
+                src={getAssetPath("/images/dfs_networking_hall.jpg")}
                 alt="Join a premier showcase stage discussion at Dubai FinTech Summit"
                 className="w-full h-auto rounded-2xl object-cover block"
                 loading="lazy"

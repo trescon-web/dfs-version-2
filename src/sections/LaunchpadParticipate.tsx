@@ -1,24 +1,24 @@
-import { getAssetPath } from "@/utils/assetPath";
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export default function LaunchpadParticipate() {
   const cards = [
     {
-      icon: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Participate-icon-1.svg",
+      icon: getAssetPath("/images/Vector-Right.svg"),
       text: "Own the spotlight at the region’s most influential FinTech gathering"
     },
     {
-      icon: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Participate-icon-2.svg",
+      icon: getAssetPath("/images/Vector-Right.svg"),
       text: "Connect with visionaries rewriting the rules of finance"
     },
     {
-      icon: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Participate-icon-3.svg",
+      icon: getAssetPath("/images/Vector-Right.svg"),
       text: "Attract strategic investors, partners, and global attention"
     },
     {
-      icon: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Participate-icon-4.svg",
+      icon: getAssetPath("/images/Vector-Right.svg"),
       text: "Join the movement reshaping finance"
     }
   ];
@@ -35,7 +35,7 @@ export default function LaunchpadParticipate() {
       {/* Dynamic CSS overrides for custom card backdrops */}
       <style dangerouslySetInnerHTML={{__html: `
         .launchpad-card-bg {
-          background-image: linear-gradient(rgba(8, 32, 40, 0.85), rgba(8, 32, 40, 0.85)), url('https://dubaifintechsummit.com/wp-content/uploads/2026/02/new_dfs-summit-2025-card.webp') !important;
+          background-image: linear-gradient(rgba(8, 32, 40, 0.85), rgba(8, 32, 40, 0.85)), url('${getAssetPath("/images/dfs_strategic_networking_custom_clean.jpg")}') !important;
           background-position: center bottom !important;
           background-size: cover !important;
           border: 1px solid rgba(18, 232, 232, 0.15) !important;

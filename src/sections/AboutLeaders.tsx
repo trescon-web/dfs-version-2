@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -18,7 +19,7 @@ export default function AboutLeaders() {
       id: "01",
       title: "Global FinTech leaders and innovators",
       tag: "INNOVATORS",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Global-FinTech-leaders-and-innovators-Img.webp",
+      image: getAssetPath("/images/dfs_vip_delegates_custom.jpg"),
       metrics: "2,500+",
       subtitle: "Unicorn founders, digital pioneers & disruptive startups",
       gridClass: "lg:col-span-8"
@@ -27,7 +28,7 @@ export default function AboutLeaders() {
       id: "02",
       title: "Financial institutions",
       tag: "BANKING",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Financial-institutions-Img.webp",
+      image: getAssetPath("/images/dfs_entrance_hall.jpg"),
       metrics: "450+",
       subtitle: "Tier-1 retail banks, investment houses & neo-banks",
       gridClass: "lg:col-span-4"
@@ -36,7 +37,7 @@ export default function AboutLeaders() {
       id: "03",
       title: "Technology and data experts",
       tag: "TECH LEADS",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Technology-and-data-experts-Img.webp",
+      image: getAssetPath("/images/dfs_networking_hall.jpg"),
       metrics: "1,200+",
       subtitle: "Cloud architects, AI specialists & security pioneers",
       gridClass: "lg:col-span-4"
@@ -45,7 +46,7 @@ export default function AboutLeaders() {
       id: "04",
       title: "Investors and capital providers",
       tag: "CAPITAL",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Investors-and-capital-providers-Img.webp",
+      image: getAssetPath("/images/dfs_sponsors_visa_booth.jpg"),
       metrics: "$4Trn+",
       subtitle: "Venture capital, angel networks & sovereign wealth",
       gridClass: "lg:col-span-8"
@@ -54,7 +55,7 @@ export default function AboutLeaders() {
       id: "05",
       title: "Policymakers and regulators",
       tag: "GOVERNANCE",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Policymakers-and-regulators-Img.webp",
+      image: getAssetPath("/images/dfs_executive_portrait_custom.jpg"),
       metrics: "60+",
       subtitle: "Central bankers, legal advisors & sandbox architects",
       gridClass: "lg:col-span-4"
@@ -63,7 +64,7 @@ export default function AboutLeaders() {
       id: "06",
       title: "Ecosystem builders and partners",
       tag: "ALLIANCES",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Ecosystem-builders-and-partners-Img.webp",
+      image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
       metrics: "180+",
       subtitle: "Accelerators, research hubs & academic networks",
       gridClass: "lg:col-span-4"
@@ -72,7 +73,7 @@ export default function AboutLeaders() {
       id: "07",
       title: "Thought leaders and media",
       tag: "PRESS",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/01/Thought-leaders-and-media-Img.webp",
+      image: getAssetPath("/images/dfs_female_executive_custom.jpg"),
       metrics: "120+",
       subtitle: "Journalists, authors & industry analysis publishers",
       gridClass: "lg:col-span-4"

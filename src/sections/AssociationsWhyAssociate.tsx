@@ -1,5 +1,5 @@
-import { getAssetPath } from "@/utils/assetPath";
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -28,7 +28,7 @@ export default function AssociationsWhyAssociate() {
             className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-100/50 bg-white p-2 order-2 lg:order-1"
           >
             <img
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/02/Join-a-premier-showcase-img-New.webp"
+              src={getAssetPath("/images/dfs_networking_hall.jpg")}
               alt="Speaker on stage at Dubai FinTech Summit World Cup"
               className="w-full h-auto rounded-2xl object-cover block"
               loading="lazy"

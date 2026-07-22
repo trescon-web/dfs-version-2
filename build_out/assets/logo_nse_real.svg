@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <!-- Red upward triangle/arrow -->
+  <polygon points="18,48 30,8 42,48" fill="#E31937"/>
+  <!-- NSE text -->
+  <text x="52" y="38" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="34" fill="#00529B" letter-spacing="2">NSE</text>
+  <!-- INDIA subtitle -->
+  <text x="52" y="52" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="#00529B" letter-spacing="4">INDIA</text>
+</svg>

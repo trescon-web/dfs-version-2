@@ -1,11 +1,12 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function DFFWHero() {
   return (
     <section 
       className="relative h-[250px] overflow-hidden bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/03/DFFW-Hero-Bg-scaled.webp')" }}
+      style={{ backgroundImage: `url(${getAssetPath("/images/gate-building.png")})` }}
     >
       {/* Dark overlay for extra readability */}
       <div className="absolute inset-0 bg-slate-950/45 z-0" />

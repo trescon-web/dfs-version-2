@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -12,78 +13,78 @@ export default function AboutVoices() {
       name: "Abdullah Alghadouni",
       role: "COO & Co-Founder at",
       company: "UPFRONT",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Abdullah-Alghadouni-Img.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Abdullah-1.mp4"
+      image: getAssetPath("/images/speaker_he_essa_kazim.png"),
+      video: ""
     },
     {
       name: "Amith Rajan",
       role: "Head of Wholesale Digital Banking",
       company: "Mashreq",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Amith-Rajan-Img.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Amith-Rajan.mp4"
+      image: getAssetPath("/images/speaker_david_nobg.png"),
+      video: ""
     },
     {
       name: "Andrew Reakes",
       role: "Director Financial Services Industry",
       company: "Presight",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Andrew-Reakes-Img.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Andrew-Reakes.mp4"
+      image: getAssetPath("/images/speaker_marcus_nobg.png"),
+      video: ""
     },
     {
       name: "Joseph Ziolkowski",
       role: "CEO and Founder",
       company: "Relm Insurance, Ltd.",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Joseph-Ziolkowski-Img-2.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Joseph.mp4"
+      image: getAssetPath("/images/speaker_noel_quinn_julius_baer.png"),
+      video: ""
     },
     {
       name: "Karim Chouman",
       role: "Founder and CEO",
       company: "MYNE",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Karim-Chouman-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Karim-Chouman.mp4"
+      image: getAssetPath("/images/speaker_hosam_arab_tabby.png"),
+      video: ""
     },
     {
       name: "Khaled Boudemagh",
       role: "Senior Manager, Strategic Partnerships MENA",
       company: "Checkout.com",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Khaled-Boudemagh-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Khalid.mp4"
+      image: getAssetPath("/images/speaker_alex_manson_sc_ventures.png"),
+      video: ""
     },
     {
       name: "Mahmoud Bouchelif",
       role: "Founder & Managing Director",
       company: "LeanTech SG",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mahmoud-Bouchelif-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mahmoud-1.mp4"
+      image: getAssetPath("/images/speaker_bjorn_sibbern_swiss_exchange.png"),
+      video: ""
     },
     {
       name: "Mahmoud Abuebeid",
       role: "CEO & Co-Founder",
       company: "GSS Group",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mahmoud-Abuebeid-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mahmoud-Abuebeid.mp4"
+      image: getAssetPath("/images/speaker_elena_nobg.png"),
+      video: ""
     },
     {
       name: "Mayank Gautam",
       role: "Director Global Trade",
       company: "Nasscom",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mayank-Gautam-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Mayank.mp4"
+      image: getAssetPath("/images/speaker_sarah_nobg.png"),
+      video: ""
     },
     {
       name: "Nadeem K Qureshi",
       role: "Sales Director",
       company: "Integra Technologies",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Nadeem-K-Qureshi-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Nadeem-K.-Qureshi.mp4"
+      image: getAssetPath("/images/speaker_adena_nobg.png"),
+      video: ""
     },
     {
       name: "Pratik Shah",
       role: "Co-Founder & CTO",
       company: "Emtribe",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Pratik-Shah-Img-New.webp",
-      video: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Pratik-Shah.mp4"
+      image: getAssetPath("/images/speaker_david.png"),
+      video: ""
     }
   ];
 

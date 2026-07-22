@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
@@ -61,7 +62,7 @@ export default function AboutDFS2025() {
     <section 
       className="relative py-28 bg-[#02090f] bg-cover bg-center no-repeat border-t border-white/5 overflow-hidden"
       style={{ 
-        backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/02/Dubai-FinTech-Summit-2025-Bg-Img-scaled.webp')",
+        backgroundImage: `url(${getAssetPath("/images/dfs_vip_walkthrough.jpg")})`,
       }}
     >
       {/* Dark overlay for ambient blend */}
@@ -154,7 +155,7 @@ export default function AboutDFS2025() {
               transition={{ duration: 0.5, delay: index * 0.04 }}
               className="relative p-8 rounded-[32px] border border-white/5 flex flex-col justify-center w-[280px] h-[220px] shrink-0 text-center shadow-xl group hover:translate-y-[-4px] transition-all duration-300 snap-center"
               style={{
-                backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/02/new_dfs-summit-2025-card.webp')",
+                backgroundImage: `url(${getAssetPath("/images/dfs_strategic_networking_custom_clean.jpg")})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center"
               }}

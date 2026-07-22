@@ -1,5 +1,5 @@
-import { getAssetPath } from "@/utils/assetPath";
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -62,7 +62,7 @@ export default function AmbassadorsContent() {
             className="lg:col-span-6 relative rounded-3xl overflow-hidden shadow-xl border border-slate-100/50 bg-white p-2"
           >
             <img
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/02/Join-the-Dubai-FinTech-Summit2026-ambassador-programme.webp"
+              src={getAssetPath("/images/dfs_vip_delegates_custom.jpg")}
               alt="Join the Dubai FinTech Summit 2026 Ambassador Programme"
               className="w-full h-auto rounded-2xl object-cover block"
               loading="lazy"

@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
 
@@ -8,7 +9,7 @@ export default function AboutHero() {
       {/* 1. Header Banner (Dark Theme) */}
       <section 
         className="relative h-[250px] overflow-hidden bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/03/About-us-hero-banner-updated-desktop-scaled.webp')" }}
+        style={{ backgroundImage: `url(${getAssetPath("/images/dfs_entrance_hall.jpg")})` }}
       >
         {/* Dark overlay for extra readability */}
         <div className="absolute inset-0 bg-slate-950/45 z-0" />
@@ -70,7 +71,7 @@ export default function AboutHero() {
             <div className="lg:col-span-5 relative w-full flex items-center justify-center">
               <div className="relative rounded-3xl overflow-hidden border border-[#12e9e9]/35 shadow-[0_0_35px_rgba(18,233,233,0.18)] hover:border-[#12e9e9]/55 hover:shadow-[0_0_45px_rgba(18,233,233,0.28)] transition-all duration-500 group w-full aspect-4/3">
                 <img
-                  src="https://dubaifintechsummit.com/wp-content/uploads/2026/04/Connecting-ideas-markets-and-opportunities-img.webp"
+                  src={getAssetPath("/images/dfs_networking_hall.jpg")}
                   alt="Connecting ideas, markets, and opportunities"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />

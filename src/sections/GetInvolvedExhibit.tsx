@@ -1,5 +1,5 @@
-import { getAssetPath } from "@/utils/assetPath";
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Ticket, Award, CheckCircle2, Layout, ArrowUpRight } from "lucide-react";
@@ -13,7 +13,7 @@ export default function GetInvolvedExhibit() {
       badge: "EXHIBITOR",
       title: "Exhibit",
       price: "USD 6,000",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Exhibit-Img-New.webp",
+      image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
       buttonText: "Buy now",
       note: "*Price includes cost of Exhibition Package and a pre-built exhibition stand.",
       benefits: [
@@ -41,7 +41,7 @@ export default function GetInvolvedExhibit() {
       badge: "START-UP POD",
       title: "Start-up Pod",
       price: "USD 3,000",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Startup-Pod-banner-img.webp",
+      image: getAssetPath("/images/stage-innovation.webp"),
       buttonText: "Buy now",
       note: "*Price includes cost of Start-up Pod Package and a pre-built exhibition pod.",
       benefits: [

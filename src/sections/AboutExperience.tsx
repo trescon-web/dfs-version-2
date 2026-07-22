@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,19 +18,19 @@ export default function AboutExperience() {
       tabLabel: "Extended Programme",
       title: "Extended Programme – strategic dialogue, global impact",
       desc: "Engage with global leaders and senior decision-makers across finance, technology, and policy. Each session delivers actionable insights on emerging trends, regulatory evolution, and market-shaping innovations. The extended programme is where influence meets opportunity.",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Extended-programme-global-impact-img.webp",
+      image: getAssetPath("/images/dfs_conference_programme_clean.jpg"),
     },
     {
       tabLabel: "Exhibition Arena",
       title: "Exhibition Arena – the innovation showcase",
       desc: "Experience breakthrough technologies and solutions across start-up arenas and country pavilions. Engage directly with innovators, explore market-ready developments, and discover platforms driving digital transformation.",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Exhibition-arena-innovation-img.webp",
+      image: getAssetPath("/images/innovation_arena_clean.jpg"),
     },
     {
       tabLabel: "FinTech World Cup",
       title: "FinTech World Cup Grand Finale",
       desc: "Watch the world’s top FinTech start-ups compete on the Innovation Stage on Day 2 of the Summit, showcasing transformative solutions to a global audience of investors, regulators, and industry leaders. Winners get access to investors, mentorship, and international exposure to accelerate their journey.",
-      image: "https://dubaifintechsummit.com/wp-content/uploads/2026/02/Fintech-world-cup-grand-finale-img.webp",
+      image: getAssetPath("/images/fintech_world_cup_grand_finale_clean.jpg"),
     },
   ];
 

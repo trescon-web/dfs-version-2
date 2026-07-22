@@ -1,5 +1,5 @@
+"use client";
 import { getAssetPath } from "@/utils/assetPath";
-'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';

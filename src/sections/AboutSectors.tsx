@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
@@ -23,7 +24,7 @@ export default function AboutSectors() {
     <section 
       className="relative py-24 bg-[#02090f] bg-cover bg-bottom no-repeat border-t border-white/5"
       style={{ 
-        backgroundImage: "url('https://dubaifintechsummit.com/wp-content/uploads/2026/01/industry-sectors-bg-scaled-1.webp')",
+        backgroundImage: `url(${getAssetPath("/images/curated-bg.png")})`,
         backgroundPosition: "center bottom",
         backgroundRepeat: "no-repeat"
       }}

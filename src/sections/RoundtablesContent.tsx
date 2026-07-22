@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function RoundtablesContent() {
@@ -21,7 +22,7 @@ export default function RoundtablesContent() {
             className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-100/50 bg-white p-2"
           >
             <img
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/04/dfs-dialogues-new-img.webp"
+              src={getAssetPath("/images/dfs_dialogues_clean.jpg")}
               alt="DFS Dialogues workshops, roundtables, and speaker panels at Dubai FinTech Summit"
               className="w-full h-auto rounded-2xl object-cover block"
               loading="lazy"

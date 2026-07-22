@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function AssociationsPartnershipBlock() {
@@ -48,7 +49,7 @@ export default function AssociationsPartnershipBlock() {
             className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-100/50 bg-white p-2"
           >
             <img
-              src="https://dubaifintechsummit.com/wp-content/uploads/2026/04/Association-Partnerships-at-Dubai-FinTech-Summit-Latest-Img-2048x1366-1.png"
+              src={getAssetPath("/images/mous_partnerships_clean.jpg")}
               alt="Association Partnerships signing ceremony at Dubai FinTech Summit"
               className="w-full h-auto rounded-2xl object-cover block"
               loading="lazy"
