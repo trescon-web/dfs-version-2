@@ -4,6 +4,8 @@ export function getAssetPath(path: string): string {
     return path;
   }
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  // Always prefix repository name for GitHub Pages subpath deployment
+  if (cleanPath.startsWith('/dfs-version-2')) {
+    return cleanPath;
+  }
   return `/dfs-version-2${cleanPath}`;
 }
