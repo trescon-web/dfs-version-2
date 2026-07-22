@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mic, ArrowRight, Search } from "lucide-react";
@@ -66,11 +66,11 @@ const companyDomainMap: Record<string, string> = {
 };
 
 const companyLogoMap: Record<string, string> = {
-  "DIFC": "/images/organized-difc-logo-new.png",
-  "DIFC Authority": "/images/organized-difc-logo-new.png",
-  "DBS Group": "/images/dbs-logo.svg",
-  "National Stock Exchange of India (NSE)": "/images/nse-logo.svg",
-  "Morgan Stanley": "/images/morgan-stanley-logo.svg",
+  "DIFC": getAssetPath("/images/organized-difc-logo-new.png"),
+  "DIFC Authority": getAssetPath("/images/organized-difc-logo-new.png"),
+  "DBS Group": getAssetPath("/images/dbs-logo.svg"),
+  "National Stock Exchange of India (NSE)": getAssetPath("/images/nse-logo.svg"),
+  "Morgan Stanley": getAssetPath("/images/morgan-stanley-logo.svg"),
   "Bombay Stock Exchange (BSE)": "https://bseindia.com/assets/includenew/images/bselogo.png",
   "President of London Chamber of Commerce & Industry": "https://londonchamber.co.uk/favicons/apple-touch-icon.png",
   "Guernsey Financial Services Commission": "https://gfsc.gg/themes/custom/gfsc_theme/favicon.ico",

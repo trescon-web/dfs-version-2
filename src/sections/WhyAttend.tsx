@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { DFSDiamond } from "@/components/BrandElements";
@@ -49,13 +49,13 @@ export default function WhyAttend() {
             <div className="flex items-center space-x-4 pt-4 border-t border-slate-200 w-full">
               <div className="flex -space-x-3 shrink-0">
                 <div className="w-9 h-9 rounded-full border-2 border-white overflow-hidden relative shadow-sm">
-                  <Image src="/images/speaker_david.png" alt="Speaker" fill className="object-cover" />
+                  <Image src={getAssetPath("/images/speaker_david.png")} alt="Speaker" fill className="object-cover" />
                 </div>
                 <div className="w-9 h-9 rounded-full border-2 border-white overflow-hidden relative shadow-sm">
-                  <Image src="/images/speaker_sarah.png" alt="Speaker" fill className="object-cover" />
+                  <Image src={getAssetPath("/images/speaker_sarah.png")} alt="Speaker" fill className="object-cover" />
                 </div>
                 <div className="w-9 h-9 rounded-full border-2 border-white overflow-hidden relative shadow-sm">
-                  <Image src="/images/speaker_elena.png" alt="Speaker" fill className="object-cover" />
+                  <Image src={getAssetPath("/images/speaker_elena.png")} alt="Speaker" fill className="object-cover" />
                 </div>
               </div>
               
@@ -88,7 +88,7 @@ export default function WhyAttend() {
               className="md:col-span-5 h-[320px] rounded-3xl rounded-tr-[55px] overflow-hidden relative border border-white/10 group shadow-2xl"
             >
               <Image
-                src="/images/dfs_female_executive_custom.jpg"
+                src={getAssetPath("/images/dfs_female_executive_custom.jpg")}
                 alt="Summit key bank delegates"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -210,7 +210,7 @@ export default function WhyAttend() {
               {/* Right Side: Portrait of Speaker in Frame */}
               <div className="relative w-[110px] md:w-[130px] h-full rounded-2xl overflow-hidden border border-white/10 shrink-0 ml-4">
                 <Image
-                  src="/images/dfs_executive_portrait_custom.jpg"
+                  src={getAssetPath("/images/dfs_executive_portrait_custom.jpg")}
                   alt="Global Financial Regulators Speaker"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-750 ease-out"

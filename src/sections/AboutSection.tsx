@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -45,7 +45,7 @@ export default function AboutSection() {
             >
               <div className="absolute inset-0 w-full h-full skew-x-12 scale-125">
                 <Image
-                  src="/images/dfs_executive_portrait_custom.jpg"
+                  src={getAssetPath("/images/dfs_executive_portrait_custom.jpg")}
                   alt="Keynote Speaker Panel"
                   fill
                   className="object-cover"
@@ -60,7 +60,7 @@ export default function AboutSection() {
             >
               <div className="absolute inset-0 w-full h-full skew-x-12 scale-125">
                 <Image
-                  src="/images/dfs_visa_exhibition_booth.jpg"
+                  src={getAssetPath("/images/dfs_visa_exhibition_booth.jpg")}
                   alt="Summit Exhibition Hall"
                   fill
                   className="object-cover"

@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { CheckCircle, ShieldCheck, Handshake, Landmark, Target } from "lucide-react";
 
@@ -9,25 +9,25 @@ export default function DFFWOverview() {
       title: "Showcase Innovation & Policy",
       desc: "Highlight Dubai's leadership and regulatory framework in pioneering new financial technologies and international standards.",
       icon: Landmark,
-      img: "/images/dfs_nasdaq_keynote.jpg"
+      img: getAssetPath("/images/dfs_nasdaq_keynote.jpg")
     },
     {
       title: "Facilitate Global Collaboration",
       desc: "Strengthen ties between regional and global financial players, encouraging cross-border corridor connections and investment flows.",
       icon: Handshake,
-      img: "/images/dfs_networking_hall.jpg"
+      img: getAssetPath("/images/dfs_networking_hall.jpg")
     },
     {
       title: "Drive Regulatory Dialogue",
       desc: "Foster open discussions around digital assets, compliance rails, tokenization structures, and sovereign wealth frameworks.",
       icon: ShieldCheck,
-      img: "/images/dfs_executive_portrait_custom.jpg"
+      img: getAssetPath("/images/dfs_executive_portrait_custom.jpg")
     },
     {
       title: "Ecosystem Acceleration",
       desc: "Provide early-stage fintech, Web3 scale-ups, and AI builders direct access to venture capital, accelerators, and launchpad licensing.",
       icon: Target,
-      img: "/images/dfs_female_executive_custom.jpg"
+      img: getAssetPath("/images/dfs_female_executive_custom.jpg")
     },
   ];
 
@@ -87,7 +87,7 @@ export default function DFFWOverview() {
               className="relative overflow-hidden rounded-[32px] shadow-2xl border border-slate-100 aspect-[4/3] group cursor-default"
             >
               <img 
-                src="/images/dfs_visa_exhibition_booth.jpg" 
+                src={getAssetPath("/images/dfs_visa_exhibition_booth.jpg")} 
                 alt="Dubai Future Finance Week Crowd" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

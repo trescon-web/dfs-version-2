@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, MessageSquare, Calendar, Users, Target, UserPlus } from "lucide-react";

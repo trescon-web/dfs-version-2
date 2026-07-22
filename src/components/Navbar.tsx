@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { useState, useEffect } from "react";
 import { Menu, X, Globe, Search, Calendar, ChevronRight, ChevronDown, Mic, Building, Sparkles, Handshake, ArrowRight, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -164,7 +164,7 @@ export default function Navbar() {
   const speakersMega = {
     title: "Keynote Lineup",
     subtitle: "Meet the 150+ leaders reshaping global capital markets.",
-    image: "/images/dfs_nasdaq_keynote.jpg",
+    image: getAssetPath("/images/dfs_nasdaq_keynote.jpg"),
     links: [
       {
         title: "Keynote Orators",
@@ -190,7 +190,7 @@ export default function Navbar() {
   const getInvolvedMega = {
     title: "Participation Hub",
     subtitle: "Engage with global financial technology builders and investors.",
-    image: "/images/dfs_visa_exhibition_booth.jpg",
+    image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
     links: [
       {
         title: "Buy Tickets",
@@ -222,7 +222,7 @@ export default function Navbar() {
   const aboutMega = {
     title: "About the Summit",
     subtitle: "Connecting global leaders to shape the future of finance.",
-    image: "/images/gate-building.png",
+    image: getAssetPath("/images/gate-building.png"),
     links: [
       {
         title: "About DFS",
@@ -248,7 +248,7 @@ export default function Navbar() {
   const ecosystemMega = {
     title: "Global FinTech Ecosystem",
     subtitle: "Collaborating with sponsors, regulatory bodies, and news networks.",
-    image: "/images/dfs_sponsors_visa_booth.jpg",
+    image: getAssetPath("/images/dfs_sponsors_visa_booth.jpg"),
     links: [
       {
         title: "Sponsors",

@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Eye, Handshake, Shield, MessageSquare, ArrowUpRight } from "lucide-react";
 

@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -33,7 +33,7 @@ export default function GetInvolvedSpeak() {
           >
             <div className="relative rounded-3xl overflow-hidden hover:scale-[1.01] transition-transform duration-500">
               <img
-                src="/images/dfs_executive_portrait_custom.jpg"
+                src={getAssetPath("/images/dfs_executive_portrait_custom.jpg")}
                 alt="Take the stage speakers"
                 className="w-full h-auto block object-cover"
               />

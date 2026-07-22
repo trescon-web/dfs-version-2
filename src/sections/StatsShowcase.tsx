@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { TrendingUp, Users, Globe2, Briefcase } from "lucide-react";

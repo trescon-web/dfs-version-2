@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function LaunchpadStage() {
@@ -50,7 +50,7 @@ export default function LaunchpadStage() {
               className="lg:col-span-7 relative"
             >
               <img
-                src="/images/stage-innovation.png"
+                src={getAssetPath("/images/stage-innovation.png")}
                 alt="A Global Stage for FinTech Innovation"
                 className="w-full h-auto block object-contain"
                 loading="lazy"

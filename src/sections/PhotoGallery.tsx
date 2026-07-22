@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { X, Play, Image, ZoomIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";

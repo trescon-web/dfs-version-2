@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Search, Bookmark, BookmarkCheck, MapPin, Sparkles, Plus, Check, ChevronDown, ChevronUp } from "lucide-react";

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Map, Cpu, Zap, Landmark, Coffee, ArrowRight } from "lucide-react";
 

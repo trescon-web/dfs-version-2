@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Check, X, ArrowUpRight } from "lucide-react";
 

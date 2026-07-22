@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Sparkles, Mail, Send } from "lucide-react";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export default function Newsletter() {
       {/* 1. Full cover background photo with zero opacity mask overlays */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/dfs_networking_hall.jpg"
+          src={getAssetPath("/images/dfs_networking_hall.jpg")}
           alt="Dubai FinTech Summit networking hall background"
           fill
           sizes="100vw"

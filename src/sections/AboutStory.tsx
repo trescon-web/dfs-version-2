@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Building2, Cpu, Globe, Rocket, Landmark } from "lucide-react";

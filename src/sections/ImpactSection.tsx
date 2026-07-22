@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Shield, TrendingUp, Users, Presentation, Globe, Award } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
@@ -157,7 +157,7 @@ export default function ImpactSection() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
-          <source src="/videos/dfs-hero-video.mp4" type="video/mp4" />
+          <source src={getAssetPath("/videos/dfs-hero-video.mp4")} type="video/mp4" />
         </video>
         {/* Ambient cinematic masking layers */}
         <div className="absolute inset-0 bg-[#02090f]/65 backdrop-blur-[2px]" />

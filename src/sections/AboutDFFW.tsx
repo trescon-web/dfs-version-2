@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function AboutDFFW() {
@@ -7,7 +7,7 @@ export default function AboutDFFW() {
     <section 
       className="relative py-28 bg-cover bg-center bg-no-repeat flex items-center justify-end overflow-hidden border-t border-white/5 min-h-[480px]"
       style={{
-        backgroundImage: "url('/images/gate-building.png')",
+        backgroundImage: `url(${getAssetPath("/images/gate-building.png")})`,
       }}
     >
       {/* Dark overlay to merge sunset colors with the page theme */}

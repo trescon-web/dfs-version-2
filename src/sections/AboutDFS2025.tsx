@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";

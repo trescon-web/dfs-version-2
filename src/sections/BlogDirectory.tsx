@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, BookOpen } from "lucide-react";
 

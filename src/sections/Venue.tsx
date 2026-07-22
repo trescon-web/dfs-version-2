@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Sparkles, MapPin, Calendar, Compass, Train } from "lucide-react";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function Venue() {
       {/* 1. Full cover background photo with zero opacity mask overlays */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/dfs_visa_exhibition_booth.jpg"
+          src={getAssetPath("/images/dfs_visa_exhibition_booth.jpg")}
           alt="Dubai FinTech Summit venue entrance lobby background"
           fill
           sizes="100vw"

@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
@@ -20,49 +20,49 @@ export default function LeadershipSlider() {
   const cards: SliderCard[] = [
     {
       title: "Exclusive ecosystem events",
-      img: "/images/exclusive_ecosystem_events_clean.jpg",
+      img: getAssetPath("/images/exclusive_ecosystem_events_clean.jpg"),
       scene: "01",
       tagline: "PILLAR 01",
       desc: "Invite-only sessions and workshops designed for decision-makers driving change across FinTech."
     },
     {
       title: "Conference programme",
-      img: "/images/dfs_conference_programme_clean.jpg",
+      img: getAssetPath("/images/dfs_conference_programme_clean.jpg"),
       scene: "02",
       tagline: "PILLAR 02",
       desc: "Dive into powerful keynotes and sharp panel debates that tackle the real issues shaping global finance."
     },
     {
       title: "The innovation arena",
-      img: "/images/innovation_arena_clean.jpg",
+      img: getAssetPath("/images/innovation_arena_clean.jpg"),
       scene: "03",
       tagline: "PILLAR 03",
       desc: "Explore breakthrough technologies and meet the companies redefining financial services."
     },
     {
       title: "Strategic networking",
-      img: "/images/dfs_strategic_networking_custom_clean.jpg",
+      img: getAssetPath("/images/dfs_strategic_networking_custom_clean.jpg"),
       scene: "04",
       tagline: "PILLAR 04",
       desc: "Connect with industry leaders, investors, and innovators ready to turn ideas into action."
     },
     {
       title: "FinTech launchpad",
-      img: "/images/dfs_fintech_launchpad_custom_clean.jpg",
+      img: getAssetPath("/images/dfs_fintech_launchpad_custom_clean.jpg"),
       scene: "05",
       tagline: "PILLAR 05",
       desc: "A platform for announcements, innovations, collaboration, and key connections."
     },
     {
       title: "DFS dialogues",
-      img: "/images/dfs_dialogues_clean.jpg",
+      img: getAssetPath("/images/dfs_dialogues_clean.jpg"),
       scene: "06",
       tagline: "PILLAR 06",
       desc: "Closed-door discussions among policymakers and C-suite leaders providing regulatory and market insights."
     },
     {
       title: "MOUs and partnerships",
-      img: "/images/mous_partnerships_clean.jpg",
+      img: getAssetPath("/images/mous_partnerships_clean.jpg"),
       scene: "07",
       tagline: "PILLAR 07",
       desc: "Build high-impact alliances with the people and companies transforming the FinTech landscape.",
@@ -70,7 +70,7 @@ export default function LeadershipSlider() {
     },
     {
       title: "FinTech World Cup grand finale",
-      img: "/images/fintech_world_cup_grand_finale_clean.jpg",
+      img: getAssetPath("/images/fintech_world_cup_grand_finale_clean.jpg"),
       scene: "08",
       tagline: "PILLAR 08",
       desc: "Watch top start-ups battle it out live for global recognition, rewards, and investment."

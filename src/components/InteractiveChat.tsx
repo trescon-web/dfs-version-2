@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef, useEffect } from "react";
 import { Sparkles, MessageSquare, X, Send, Plus, Check, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";

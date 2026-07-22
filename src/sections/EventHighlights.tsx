@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Mic, Building, Sparkles, Handshake, ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef, useEffect } from "react";
@@ -41,28 +41,28 @@ export default function EventHighlights() {
       tag: "01 / DIALOGUE",
       title: "Keynotes from Governors",
       desc: "Hear directly from Central Bank Governors, Finance Ministers, and global regulatory architects shaping policy rails.",
-      img: "/images/dfs_nasdaq_keynote.jpg",
+      img: getAssetPath("/images/dfs_nasdaq_keynote.jpg"),
     },
     {
       icon: Building,
       tag: "02 / EXPO",
       title: "Global Fintech Exhibition",
       desc: "A massive tech showcase featuring over 200+ global brands and startups displaying next-gen fintech solutions.",
-      img: "/images/dfs_visa_exhibition_booth.jpg",
+      img: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
     },
     {
       icon: Handshake,
       tag: "03 / FUNDING",
       title: "Investor Matchmaking",
       desc: "Exclusive networking lounges linking 1,000+ venture capital funds with high-growth startup ecosystems.",
-      img: "/images/dfs_female_executive_custom.jpg",
+      img: getAssetPath("/images/dfs_female_executive_custom.jpg"),
     },
     {
       icon: Sparkles,
       tag: "04 / INNOVATION",
       title: "Advisory Board Panels",
       desc: "Critical roundtables convening industry titans to establish guidelines for artificial intelligence and cross-border rails.",
-      img: "/images/dfs_networking_hall.jpg",
+      img: getAssetPath("/images/dfs_networking_hall.jpg"),
     },
   ];
 

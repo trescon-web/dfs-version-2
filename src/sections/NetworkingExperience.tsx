@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import { Sparkles, Calendar, GlassWater, ArrowRight, ArrowLeft } from "lucide-react";
 import { useRef } from "react";
@@ -25,28 +25,28 @@ export default function NetworkingExperience() {
       tag: "01 // NETWORKING",
       desc: "An exclusive evening under the stars for advisory board members, ministers, and key corporate delegates.",
       meta: "02 November // 19:30",
-      img: "/images/dfs_networking_hall.jpg",
+      img: getAssetPath("/images/dfs_networking_hall.jpg"),
     },
     {
       title: "VC Speed Dating Lounges",
       tag: "02 // MATCHMAKING",
       desc: "One-on-one matchmaking sessions connecting early and growth-stage companies with active venture funds.",
       meta: "02-03 November // All Day",
-      img: "/images/dfs_female_executive_custom.jpg",
+      img: getAssetPath("/images/dfs_female_executive_custom.jpg"),
     },
     {
       title: "Advisory Board Luncheons",
       tag: "03 // COLLABORATION",
       desc: "Closed-door policy sessions establishing standard blueprints for cognitive models and global compliance ledgers.",
       meta: "03 November // 12:30",
-      img: "/images/dfs_nasdaq_keynote.jpg",
+      img: getAssetPath("/images/dfs_nasdaq_keynote.jpg"),
     },
     {
       title: "Fintech Excellence Awards",
       tag: "04 // CELEBRATION",
       desc: "A gala dinner celebrating disruptive tech architectures and the builders laying international rails.",
       meta: "03 November // 20:00",
-      img: "/images/dfs_visa_exhibition_booth.jpg",
+      img: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
     },
   ];
 

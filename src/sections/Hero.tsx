@@ -1,9 +1,9 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import { DFSDiamond } from "@/components/BrandElements";
+import { getAssetPath } from "@/utils/assetPath";
 
 /**
  * High-performance 3D Financial Topographic Mesh Canvas
@@ -174,7 +174,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 select-none z-0"
       >
-        <source src="/videos/dfs-hero-video.mp4" type="video/mp4" />
+        <source src={getAssetPath("/videos/dfs-hero-video.mp4")} type="video/mp4" />
       </video>
 
       {/* 3. Official Brand Floating Diamonds (Parallax/UX Depth) */}
@@ -269,7 +269,7 @@ export default function Hero() {
         >
           {/* Organised by DIFC */}
           <img 
-            src="/images/organized-difc-logo-new.svg" 
+            src={getAssetPath("/images/organized-difc-logo-new.svg")} 
             alt="Organised by DIFC" 
             className="h-12 sm:h-14 md:h-16 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-all duration-300" 
           />
@@ -278,7 +278,7 @@ export default function Hero() {
 
           {/* Part of Future Finance Week */}
           <img 
-            src="/images/Dffw-New-Logo.svg" 
+            src={getAssetPath("/images/Dffw-New-Logo.svg")} 
             alt="Part of Dubai Future Finance Week" 
             className="h-12 sm:h-14 md:h-16 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-all duration-300" 
           />

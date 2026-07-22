@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Cpu, Code2, LineChart, ShieldCheck } from "lucide-react";
 

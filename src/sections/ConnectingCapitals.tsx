@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -113,7 +113,7 @@ export default function ConnectingCapitals() {
       {/* Background graphic: Glowing cyan chevron graphic */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <Image
-          src="/images/global_capitals_chevron_bg.png"
+          src={getAssetPath("/images/global_capitals_chevron_bg.png")}
           alt="Connecting Capitals Chevron Background"
           fill
           className="object-cover object-bottom"

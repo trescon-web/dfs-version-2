@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Check, ShieldCheck, Ticket } from "lucide-react";
 

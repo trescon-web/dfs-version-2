@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Sparkles, Newspaper, ArrowUpRight } from "lucide-react";
 

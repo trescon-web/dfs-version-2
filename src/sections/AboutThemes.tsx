@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Shield, Database, Send, TrendingUp, Briefcase, Cpu, Leaf, Lock } from "lucide-react";
 

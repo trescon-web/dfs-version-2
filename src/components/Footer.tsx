@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Logo 1: Dubai Fintech Summit */}
           <div className="flex items-center justify-center h-14 md:h-16 w-full md:w-auto">
             <img 
-              src="/images/Dubai-Fintech-Summit-Green-White-Logo.svg" 
+              src={getAssetPath("/images/Dubai-Fintech-Summit-Green-White-Logo.svg")} 
               alt="Dubai Fintech Summit" 
               className="h-10 sm:h-12 md:h-15 w-auto object-contain max-w-[140px] sm:max-w-none" 
             />
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Separator */}
           <img 
-            src="/images/Vector-Right.svg" 
+            src={getAssetPath("/images/Vector-Right.svg")} 
             alt="Separator" 
             className="h-9 w-auto object-contain opacity-55 hidden md:block" 
           />
@@ -84,7 +84,7 @@ export default function Footer() {
           {/* Logo 2: Organised by DIFC */}
           <div className="flex items-center justify-center h-14 md:h-16 w-full md:w-auto">
             <img 
-              src="/images/organized-difc-logo-new.svg" 
+              src={getAssetPath("/images/organized-difc-logo-new.svg")} 
               alt="Organised by DIFC" 
               className="h-10 sm:h-12 md:h-15 w-auto object-contain max-w-[140px] sm:max-w-none" 
             />
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Separator */}
           <img 
-            src="/images/Vector-Right.svg" 
+            src={getAssetPath("/images/Vector-Right.svg")} 
             alt="Separator" 
             className="h-9 w-auto object-contain opacity-55 hidden md:block" 
           />
@@ -100,7 +100,7 @@ export default function Footer() {
           {/* Logo 3: Part of Dubai Future Finance Week */}
           <div className="flex items-center justify-center h-14 md:h-16 w-full md:w-auto">
             <img 
-              src="/images/Dffw-New-Logo.svg" 
+              src={getAssetPath("/images/Dffw-New-Logo.svg")} 
               alt="Part of Dubai Future Finance Week" 
               className="h-10 sm:h-12 md:h-15 w-auto object-contain max-w-[140px] sm:max-w-none" 
             />
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Separator */}
           <img 
-            src="/images/Vector-Right.svg" 
+            src={getAssetPath("/images/Vector-Right.svg")} 
             alt="Separator" 
             className="h-9 w-auto object-contain opacity-55 hidden md:block" 
           />
@@ -116,7 +116,7 @@ export default function Footer() {
           {/* Logo 4: Managed by Trescon */}
           <div className="flex items-center justify-center h-14 md:h-16 w-full md:w-auto">
             <img 
-              src="/images/10-trescon-logo-white.svg" 
+              src={getAssetPath("/images/10-trescon-logo-white.svg")} 
               alt="Managed by Trescon" 
               className="h-12 sm:h-14 md:h-18 w-auto object-contain max-w-[140px] sm:max-w-none" 
             />

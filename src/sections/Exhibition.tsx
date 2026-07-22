@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -10,43 +10,43 @@ export default function Exhibition() {
 
   const slides = [
     { 
-      src: "/images/exhibit/exhibit-1.png", 
+      src: getAssetPath("/images/exhibit/exhibit-1.png"), 
       alt: "Deal Flow Chambers",
       label: "01 // DEAL FLOW CHAMBERS",
       caption: "High-value deal lounges connecting sovereign allocators with global enterprise founders."
     },
     { 
-      src: "/images/exhibit/exhibit-2.png", 
+      src: getAssetPath("/images/exhibit/exhibit-2.png"), 
       alt: "Brand Showcase Arena",
       label: "02 // BRAND SHOWCASE ARENA",
       caption: "Over 200+ global brands and startup booths exhibiting live transactional platforms."
     },
     { 
-      src: "/images/exhibit/exhibit-3.png", 
+      src: getAssetPath("/images/exhibit/exhibit-3.png"), 
       alt: "Strategic Syndicate Stages",
       label: "03 // STRATEGIC SYNDICATE STAGES",
       caption: "Titans of fintech and central bankers aligning policies and regulatory licensing."
     },
     { 
-      src: "/images/exhibit/exhibit-4.png", 
+      src: getAssetPath("/images/exhibit/exhibit-4.png"), 
       alt: "Spatial Networking Hubs",
       label: "04 // SPATIAL NETWORKING HUBS",
       caption: "Closed-door networking halls driving corridor conversations and cross-border trade bridges."
     },
     { 
-      src: "/images/exhibit/exhibit-5.png", 
+      src: getAssetPath("/images/exhibit/exhibit-5.png"), 
       alt: "Global Innovation Pavilion",
       label: "05 // GLOBAL INNOVATION PAVILION",
       caption: "Cutting-edge web3, AI, and digital payment demonstrations from international tech hubs."
     },
     { 
-      src: "/images/exhibit/exhibit-6.png", 
+      src: getAssetPath("/images/exhibit/exhibit-6.png"), 
       alt: "Investor Syndicate Lounges",
       label: "06 // INVESTOR SYNDICATE LOUNGES",
       caption: "Exclusive matchmaking chambers connecting seed to Series C fintech pioneers with tier-1 VCs."
     },
     { 
-      src: "/images/exhibit/exhibit-7.png", 
+      src: getAssetPath("/images/exhibit/exhibit-7.png"), 
       alt: "Future Finance Expo Arena",
       label: "07 // FUTURE FINANCE EXPO ARENA",
       caption: "World-class exhibition floor hosting multi-trillion dollar asset managers and banking leaders."

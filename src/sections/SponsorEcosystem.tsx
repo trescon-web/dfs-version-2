@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Building2, X, Globe, MapPin, ArrowRight, Award } from "lucide-react";

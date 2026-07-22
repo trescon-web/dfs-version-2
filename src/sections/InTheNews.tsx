@@ -1,5 +1,5 @@
 "use client";
-
+import { getAssetPath } from "@/utils/assetPath";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -14,7 +14,7 @@ export default function InTheNews() {
       category: "CNBC SPECIAL COVERAGE",
       logo: (
         <img 
-          src="/images/logo-1.svg" 
+          src={getAssetPath("/images/logo-1.svg")} 
           alt="CNBC Logo" 
           className="h-auto w-[40%] object-contain" 
         />
@@ -25,7 +25,7 @@ export default function InTheNews() {
       category: "KHALEEJ TIMES HEADLINE",
       logo: (
         <img 
-          src="/images/logo-2.png" 
+          src={getAssetPath("/images/logo-2.png")} 
           alt="Khaleej Times Logo" 
           className="h-auto w-[50%] object-contain" 
         />
@@ -39,7 +39,7 @@ export default function InTheNews() {
       category: "THE FINTECH TIMES SPECIAL",
       logo: (
         <img 
-          src="/images/logo-4.png" 
+          src={getAssetPath("/images/logo-4.png")} 
           alt="The Fintech Times Logo" 
           className="h-auto w-[59%] object-contain" 
         />
@@ -50,7 +50,7 @@ export default function InTheNews() {
       category: "GULF NEWS FEATURE",
       logo: (
         <img 
-          src="/images/logo-5.svg" 
+          src={getAssetPath("/images/logo-5.svg")} 
           alt="Gulf News Logo" 
           className="h-6 w-auto object-contain" 
         />
@@ -64,7 +64,7 @@ export default function InTheNews() {
       category: "ENTREPRENEUR PROFILE",
       logo: (
         <img 
-          src="/images/logo-3.jpg" 
+          src={getAssetPath("/images/logo-3.jpg")} 
           alt="Entrepreneur Middle East Logo" 
           className="h-auto w-[40%] object-contain" 
         />
@@ -75,7 +75,7 @@ export default function InTheNews() {
       category: "ECONOMIC TIMES ANALYTICS",
       logo: (
         <img 
-          src="/images/logo-6.png" 
+          src={getAssetPath("/images/logo-6.png")} 
           alt="The Economic Times Logo" 
           className="h-9 w-auto object-contain" 
         />
