@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
-const repoName = "dubai-fintech-summit-v2";
+const repoName = "dfs-version-2";
 
 const nextConfig: NextConfig = {
   output: "export",
