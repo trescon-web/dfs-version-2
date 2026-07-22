@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/assetPath";
 "use client";
 import { motion } from "framer-motion";
 import { Check, X, ArrowUpRight } from "lucide-react";
@@ -11,7 +12,7 @@ export default function BuyTickets() {
       originalPrice: "USD 199",
       buttonText: "Apply now",
       note: "*Complimentary Expo Pass is not applicable to solution providers within the FinTech or financial services sectors.",
-      href: "/general-enquiry"
+      href: getAssetPath("/general-enquiry")
     },
     {
       id: "conference",
@@ -20,7 +21,7 @@ export default function BuyTickets() {
       originalPrice: "USD 999",
       buttonText: "Buy tickets",
       note: "*Super early bird offer valid till 2 March 2026.",
-      href: "/general-enquiry"
+      href: getAssetPath("/general-enquiry")
     },
     {
       id: "vip",
@@ -29,7 +30,7 @@ export default function BuyTickets() {
       originalPrice: "USD 1,999",
       buttonText: "Buy tickets",
       note: "*Super early bird offer valid till 2 March 2026.",
-      href: "/general-enquiry"
+      href: getAssetPath("/general-enquiry")
     },
     {
       id: "vip-investor",
@@ -38,7 +39,7 @@ export default function BuyTickets() {
       originalPrice: "USD 1,999",
       buttonText: "Buy tickets",
       note: "*Super early bird offer valid till 2 March 2026.",
-      href: "/general-enquiry"
+      href: getAssetPath("/general-enquiry")
     }
   ];
 

@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/assetPath";
 "use client";
 import { motion } from "framer-motion";
 

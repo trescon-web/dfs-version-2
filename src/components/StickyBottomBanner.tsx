@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/assetPath";
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -86,7 +87,7 @@ export default function StickyBottomBanner() {
               <div className="flex items-center space-x-2 shrink-0">
                 {/* Action Button */}
                 <a
-                  href="/get-involved/#buy-tickets"
+                  href={getAssetPath("/get-involved/#buy-tickets")}
                   className="shrink-0 flex items-center space-x-1 sm:space-x-1.5 px-3 py-1.5 sm:px-5 sm:py-2.5 bg-[#12e8e8] text-[#082028] border border-[#12e8e8] hover:bg-slate-900 hover:border-slate-900 hover:text-[#12e8e8] rounded-lg font-mono text-[9px] sm:text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
                 >
                   <span>Register Now</span>
@@ -128,7 +129,7 @@ export default function StickyBottomBanner() {
 
               {/* Action Button */}
               <a
-                href="/general-enquiry"
+                href={getAssetPath("/general-enquiry")}
                 className="shrink-0 flex items-center space-x-1.5 px-5 py-2.5 bg-[#12e8e8] text-[#082028] border border-[#12e8e8] hover:bg-slate-900 hover:border-slate-900 hover:text-[#12e8e8] rounded-lg font-mono text-[10px] md:text-xs font-bold tracking-wider uppercase hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm hover:shadow-[0_4px_20px_rgba(18,232,232,0.35)]"
               >
                 <span>Enquire Now</span>

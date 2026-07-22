@@ -211,7 +211,7 @@ export default function FeaturedSpeakers() {
         </div>
 
         <div className="speakers-footer">
-          <a href="/speakers" className="btn-outline-cyan">
+          <a href={getAssetPath("/speakers")} className="btn-outline-cyan">
             <span>View all speakers</span>
             <span className="arrow-circle">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>

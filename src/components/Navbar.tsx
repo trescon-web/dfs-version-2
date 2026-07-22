@@ -88,31 +88,31 @@ export default function Navbar() {
     setSearchVal("");
 
     if (query.includes("take the stage") || query.includes("speak") || query.includes("speaking") || query.includes("become a speaker")) {
-      window.location.href = "/get-involved#speak";
+      window.location.href = getAssetPath("/get-involved#speak");
     } else if (query.includes("exhibitor")) {
-      window.location.href = "/exhibitors";
+      window.location.href = getAssetPath("/exhibitors");
     } else if (query.includes("sponsor")) {
-      window.location.href = "/sponsors";
+      window.location.href = getAssetPath("/sponsors");
     } else if (query.includes("speaker")) {
-      window.location.href = "/speakers";
+      window.location.href = getAssetPath("/speakers");
     } else if (query.includes("blog") || query.includes("news") || query.includes("article")) {
-      window.location.href = "/blog";
+      window.location.href = getAssetPath("/blog");
     } else if (query.includes("about")) {
-      window.location.href = "/about";
+      window.location.href = getAssetPath("/about");
     } else if (query.includes("media") || query.includes("partner")) {
-      window.location.href = "/media-partners";
+      window.location.href = getAssetPath("/media-partners");
     } else if (query.includes("association")) {
-      window.location.href = "/associations";
+      window.location.href = getAssetPath("/associations");
     } else if (query.includes("ambassador")) {
-      window.location.href = "/ambassadors";
+      window.location.href = getAssetPath("/ambassadors");
     } else if (query.includes("get involved") || query.includes("involved")) {
-      window.location.href = "/get-involved";
+      window.location.href = getAssetPath("/get-involved");
     } else if (query.includes("roundtable") || query.includes("workshop")) {
-      window.location.href = "/roundtables-workshops";
+      window.location.href = getAssetPath("/roundtables-workshops");
     } else if (query.includes("launchpad")) {
-      window.location.href = "/fintech-launchpad";
+      window.location.href = getAssetPath("/fintech-launchpad");
     } else if (query.includes("enquiry") || query.includes("contact")) {
-      window.location.href = "/general-enquiry";
+      window.location.href = getAssetPath("/general-enquiry");
     } else {
       window.location.href = `/speakers?search=${encodeURIComponent(query)}`;
     }
@@ -140,10 +140,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/", hasMega: false },
-    { name: "About Us", href: "/about", hasMega: true, megaId: "about" },
-    { name: "Speakers", href: "/speakers", hasMega: false },
-    { name: "Get Involved", href: "/get-involved", hasMega: true, megaId: "get-involved" },
-    { name: "Ecosystem", href: "/sponsors", hasMega: true, megaId: "ecosystem" },
+    { name: "About Us", href: getAssetPath("/about"), hasMega: true, megaId: "about" },
+    { name: "Speakers", href: getAssetPath("/speakers"), hasMega: false },
+    { name: "Get Involved", href: getAssetPath("/get-involved"), hasMega: true, megaId: "get-involved" },
+    { name: "Ecosystem", href: getAssetPath("/sponsors"), hasMega: true, megaId: "ecosystem" },
   ];
 
   const handleScrollToSection = (id: string) => {
@@ -170,19 +170,19 @@ export default function Navbar() {
         title: "Keynote Orators",
         desc: "Central Bank Governors, Finance Ministers, and regulatory architects.",
         icon: ShieldCheck,
-        href: "/speakers",
+        href: getAssetPath("/speakers"),
       },
       {
         title: "Unicorn Founders",
         desc: "Pioneers of decentralized rails, blockchain, and AI payment networks.",
         icon: Sparkles,
-        href: "/speakers",
+        href: getAssetPath("/speakers"),
       },
       {
         title: "Advisory Council",
         desc: "Industry heads guiding international policy structures.",
         icon: Mic,
-        href: "/speakers",
+        href: getAssetPath("/speakers"),
       },
     ],
   };
@@ -196,25 +196,25 @@ export default function Navbar() {
         title: "Buy Tickets",
         desc: "Secure delegate passes for keynotes, stages, and lounges.",
         icon: ChevronRight,
-        href: "/get-involved/#buy-tickets",
+        href: getAssetPath("/get-involved/#buy-tickets"),
       },
       {
         title: "Sponsor",
         desc: "Showcase innovations and brand authority to 5,000+ buyers.",
         icon: Building,
-        href: "/get-involved/#sponsor-2026",
+        href: getAssetPath("/get-involved/#sponsor-2026"),
       },
       {
         title: "Speak",
         desc: "Submit orator nominations to join panels and fire-side chats.",
         icon: Mic,
-        href: "/get-involved/#speak",
+        href: getAssetPath("/get-involved/#speak"),
       },
       {
         title: "Enquiry",
         desc: "Contact corporate sales for bespoke executive packages.",
         icon: Handshake,
-        href: "/general-enquiry",
+        href: getAssetPath("/general-enquiry"),
       },
     ],
   };
@@ -228,19 +228,19 @@ export default function Navbar() {
         title: "About DFS",
         desc: "The premier Fintech summit connecting global financial leaders.",
         icon: Building,
-        href: "/about",
+        href: getAssetPath("/about"),
       },
       {
         title: "News",
         desc: "Latest editorial insights, press releases, and announcements.",
         icon: Mic,
-        href: "/blog",
+        href: getAssetPath("/blog"),
       },
       {
         title: "Dubai Future Finance Week",
         desc: "Discover the week-long umbrella of financial events in Dubai.",
         icon: Globe,
-        href: "/dubai-future-finance-week",
+        href: getAssetPath("/dubai-future-finance-week"),
       },
     ],
   };
@@ -254,43 +254,43 @@ export default function Navbar() {
         title: "Sponsors",
         desc: "Meet our global network of tier-1 institutional sponsors.",
         icon: Building,
-        href: "/sponsors",
+        href: getAssetPath("/sponsors"),
       },
       {
         title: "Exhibitors",
         desc: "Explore leading platforms showcasing fintech solutions.",
         icon: ChevronRight,
-        href: "/exhibitors",
+        href: getAssetPath("/exhibitors"),
       },
       {
         title: "Associations",
         desc: "Affiliated global alliances, trade bodies, and organizations.",
         icon: Handshake,
-        href: "/associations",
+        href: getAssetPath("/associations"),
       },
       {
         title: "Media",
         desc: "Official international press houses and broadcast partners.",
         icon: Mic,
-        href: "/media-partners",
+        href: getAssetPath("/media-partners"),
       },
       {
         title: "Roundtables & Workshops",
         desc: "Interactive closed-door technical executive forums.",
         icon: Calendar,
-        href: "/roundtables-workshops",
+        href: getAssetPath("/roundtables-workshops"),
       },
       {
         title: "Ambassadors",
         desc: "Global advocates championing the fintech summit.",
         icon: ShieldCheck,
-        href: "/ambassadors",
+        href: getAssetPath("/ambassadors"),
       },
       {
         title: "FinTech Launchpad",
         desc: "Accelerating startup pitches and growth models.",
         icon: Sparkles,
-        href: "/fintech-launchpad",
+        href: getAssetPath("/fintech-launchpad"),
       },
     ],
   };
@@ -413,7 +413,7 @@ export default function Navbar() {
 
             {/* Enquire Now Ghost CTA */}
             <button
-              onClick={() => window.location.href = "/general-enquiry"}
+              onClick={() => window.location.href = getAssetPath("/general-enquiry")}
               className="px-4 py-2 text-sm font-bold uppercase tracking-wider rounded transition-premium duration-300 nav-btn-enquire"
             >
               Enquire Now
@@ -421,7 +421,7 @@ export default function Navbar() {
 
             {/* Buy a Pass Solid CTA */}
             <a
-              href="/get-involved/#buy-tickets"
+              href={getAssetPath("/get-involved/#buy-tickets")}
               onClick={(e) => {
                 e.preventDefault();
                 handleScrollToSection("/get-involved/#buy-tickets");
@@ -758,7 +758,7 @@ export default function Navbar() {
                 Enquire Now
               </button>
               <a
-                href="/get-involved/#buy-tickets"
+                href={getAssetPath("/get-involved/#buy-tickets")}
                 onClick={(e) => {
                   e.preventDefault();
                   handleScrollToSection("/get-involved/#buy-tickets");

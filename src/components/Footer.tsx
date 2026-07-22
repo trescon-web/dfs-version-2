@@ -7,25 +7,25 @@ export default function Footer() {
     {
       title: "ABOUT",
       items: [
-        { label: "DFS", href: "/about" },
-        { label: "News", href: "/blog" },
-        { label: "Blog", href: "/blog" },
+        { label: "DFS", href: getAssetPath("/about") },
+        { label: "News", href: getAssetPath("/blog") },
+        { label: "Blog", href: getAssetPath("/blog") },
       ],
     },
     {
       title: "ENQUIRE",
       items: [
-        { label: "Media partnership", href: "/general-enquiry" },
-        { label: "Sponsorship", href: "/general-enquiry" },
-        { label: "Become an affiliate", href: "/general-enquiry" },
+        { label: "Media partnership", href: getAssetPath("/general-enquiry") },
+        { label: "Sponsorship", href: getAssetPath("/general-enquiry") },
+        { label: "Become an affiliate", href: getAssetPath("/general-enquiry") },
       ],
     },
     {
       title: "TERMS AND CONDITIONS",
       items: [
-        { label: "Cookie policy", href: "/general-enquiry" },
-        { label: "Privacy policy", href: "/general-enquiry" },
-        { label: "General terms and conditions", href: "/general-enquiry" },
+        { label: "Cookie policy", href: getAssetPath("/general-enquiry") },
+        { label: "Privacy policy", href: getAssetPath("/general-enquiry") },
+        { label: "General terms and conditions", href: getAssetPath("/general-enquiry") },
       ],
     },
   ];

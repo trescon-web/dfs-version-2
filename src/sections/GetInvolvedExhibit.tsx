@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/assetPath";
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -180,7 +181,7 @@ export default function GetInvolvedExhibit() {
                       </div>
 
                       <a
-                        href="/general-enquiry"
+                        href={getAssetPath("/general-enquiry")}
                         className="py-3 px-6 bg-[#12e8e8] hover:bg-slate-900 text-slate-950 hover:text-white font-bold rounded-xl text-center transition-all duration-300 text-sm shadow-md cursor-pointer shrink-0 block"
                       >
                         Buy now

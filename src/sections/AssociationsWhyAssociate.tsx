@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/assetPath";
 "use client";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -81,7 +82,7 @@ export default function AssociationsWhyAssociate() {
           
           <div className="flex justify-center">
             <a
-              href="/general-enquiry"
+              href={getAssetPath("/general-enquiry")}
               className="inline-block bg-[#12e8e8] hover:bg-[#082028] text-[#082028] hover:text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-300 text-sm shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer text-center"
             >
               Enquire now

@@ -63,7 +63,7 @@ export default function GetInvolvedSpeak() {
 
             <div className="pt-2">
               <a
-                href="/general-enquiry"
+                href={getAssetPath("/general-enquiry")}
                 className="inline-block bg-[#12e8e8] hover:bg-slate-900 text-slate-950 hover:text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-300 text-sm shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer text-center"
               >
                 Apply now
