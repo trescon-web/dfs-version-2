@@ -466,15 +466,15 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
   color: #082028 !important;
 }
 
-/* Custom Unified CTA Buttons */
+/* Custom Unified CTA Buttons - Luxury Dark styling with Cyan Accent Border */
 .btn-unified {
-  background-color: #12e8e8 !important;
-  color: #082028 !important;
+  background-color: #030d16 !important;
+  color: #ffffff !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.5rem !important;
-  padding: 1rem 2rem !important; /* px-8 py-4 */
+  padding: 1rem 2.25rem !important; /* px-9 py-4 */
   border-radius: 9999px !important; /* rounded-full */
   font-family: var(--font-mono, monospace) !important;
   font-weight: 700 !important;
@@ -482,16 +482,25 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 10px 15px -3px rgba(18, 232, 232, 0.15) !important;
-  border: 1px solid transparent !important;
+  border: 1.5px solid #12e9e9 !important;
+  box-shadow: 0 4px 20px -2px rgba(18, 233, 233, 0.25) !important;
   cursor: pointer !important;
 }
 
+.btn-unified span {
+  color: #ffffff !important;
+}
+
 .btn-unified:hover {
-  background-color: #ffffff !important;
-  color: #082028 !important;
+  background-color: #0b2535 !important;
+  color: #12e9e9 !important;
+  border-color: #12e9e9 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 15px 25px -5px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px -5px rgba(18, 233, 233, 0.4) !important;
+}
+
+.btn-unified:hover span {
+  color: #12e9e9 !important;
 }
 
 .btn-unified:active {
