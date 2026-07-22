@@ -6,6 +6,8 @@ const repoName = "dubai-fintech-summit-v2";
 const nextConfig: NextConfig = {
   output: "export",
   basePath: isGithubActions ? `/${repoName}` : "",
+  assetPrefix: isGithubActions ? `/${repoName}/` : "",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
