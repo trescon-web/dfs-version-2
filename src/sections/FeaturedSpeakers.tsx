@@ -1,4 +1,5 @@
 "use client";
+import { getAssetPath } from "@/utils/assetPath";
 import { useState, useEffect, useRef } from "react";
 
 interface Speaker {
@@ -16,64 +17,64 @@ const speakers: Speaker[] = [
     title: "Governor",
     company: "Dubai International Financial Centre",
     badge: "UAE",
-    img: "/assets/speaker_he_essa_kazim.png",
-    logo: "/assets/difc-logo-dark.svg"
+    img: getAssetPath("/assets/speaker_he_essa_kazim.png"),
+    logo: getAssetPath("/assets/difc-logo-dark.svg")
   },
   {
     name: "Alex Manson",
     title: "CEO",
     company: "SC Ventures",
     badge: "SGP",
-    img: "/assets/speaker_alex_manson_sc_ventures.png",
-    logo: "/assets/logo_scventures_real.svg"
+    img: getAssetPath("/assets/speaker_alex_manson_sc_ventures.png"),
+    logo: getAssetPath("/assets/logo_scventures_real.svg")
   },
   {
     name: "Bjørn Sibbern",
     title: "Global Head Exchanges",
     company: "SIX Swiss Exchange",
     badge: "SUI",
-    img: "/assets/speaker_bjorn_sibbern_swiss_exchange.png",
-    logo: "/assets/logo_six_real.svg"
+    img: getAssetPath("/assets/speaker_bjorn_sibbern_swiss_exchange.png"),
+    logo: getAssetPath("/assets/logo_six_real.svg")
   },
   {
     name: "Shri Ashishkumar Chauhan",
     title: "Managing Director & CEO",
     company: "National Stock Exchange of India (NSE)",
     badge: "IND",
-    img: "/assets/speaker_shri_ashishkumar_chauhan_national_stock_exchange_of_india_(nse).JPG",
-    logo: "/assets/logo_nse_real.svg"
+    img: getAssetPath("/assets/speaker_shri_ashishkumar_chauhan_national_stock_exchange_of_india_(nse).JPG"),
+    logo: getAssetPath("/assets/logo_nse_real.svg")
   },
   {
     name: "Kentaro Okuda",
     title: "President & Group CEO",
     company: "Nomura Holdings, Inc.",
     badge: "JPN",
-    img: "/assets/speaker_kentaro_okuda_nomura_holdings_inc.jpg",
-    logo: "/assets/logo_nomura_real.svg"
+    img: getAssetPath("/assets/speaker_kentaro_okuda_nomura_holdings_inc.jpg"),
+    logo: getAssetPath("/assets/logo_nomura_real.svg")
   },
   {
     name: "Fadi Ghandour",
     title: "Executive Chairman",
     company: "Wamda Group",
     badge: "JOR",
-    img: "/assets/speaker_fadi_ghandour_wamda.jpg",
-    logo: "/assets/logo_wamda_real.svg"
+    img: getAssetPath("/assets/speaker_fadi_ghandour_wamda.jpg"),
+    logo: getAssetPath("/assets/logo_wamda_real.svg")
   },
   {
     name: "Hosam Arab",
     title: "CEO & Co-Founder",
     company: "Tabby",
     badge: "UAE",
-    img: "/assets/speaker_hosam_arab_tabby.png",
-    logo: "/assets/logo_tabby_real.svg"
+    img: getAssetPath("/assets/speaker_hosam_arab_tabby.png"),
+    logo: getAssetPath("/assets/logo_tabby_real.svg")
   },
   {
     name: "Noel Quinn",
     title: "Board Member",
     company: "Julius Baer",
     badge: "SUI",
-    img: "/assets/speaker_noel_quinn_julius_baer.png",
-    logo: "/assets/logo_juliusbaer_real.svg"
+    img: getAssetPath("/assets/speaker_noel_quinn_julius_baer.png"),
+    logo: getAssetPath("/assets/logo_juliusbaer_real.svg")
   }
 ];
 
