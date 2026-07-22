@@ -141,7 +141,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/", hasMega: false },
     { name: "About Us", href: "/about", hasMega: true, megaId: "about" },
-    { name: "Speakers", href: "/speakers", hasMega: true, megaId: "speakers" },
+    { name: "Speakers", href: "/speakers", hasMega: false },
     { name: "Get Involved", href: "/get-involved", hasMega: true, megaId: "get-involved" },
     { name: "Ecosystem", href: "/sponsors", hasMega: true, megaId: "ecosystem" },
   ];
