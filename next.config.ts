@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
 const repoName = "dfs-version-2";
-const basePath = isGithubActions ? `/${repoName}` : "";
+const basePath = `/${repoName}`;
 
 const nextConfig: NextConfig = {
   output: "export",
