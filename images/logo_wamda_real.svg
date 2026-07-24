@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <!-- Speech bubble/circular element -->
+  <circle cx="22" cy="28" r="16" fill="#F26522"/>
+  <!-- W inside the bubble -->
+  <text x="22" y="34" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="16" fill="#FFFFFF">W</text>
+  <!-- Small triangle tail for speech bubble -->
+  <polygon points="16,42 22,44 20,50" fill="#F26522"/>
+  <!-- AMDA text -->
+  <text x="46" y="38" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="28" fill="#F26522" letter-spacing="2">AMDA</text>
+</svg>
