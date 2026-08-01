@@ -114,7 +114,7 @@ export default function BuyTickets() {
           <span className="text-xs font-mono font-bold tracking-widest text-[#12e8e8] uppercase block">
             CHOOSE YOUR PASS
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight ticket-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight ticket-title">
             Pick Your Pass
           </h2>
           <p className="text-sm md:text-base leading-relaxed ticket-desc max-w-xl mx-auto">
@@ -146,7 +146,7 @@ export default function BuyTickets() {
                 <span className="text-[10px] font-mono font-bold tracking-widest text-[#12e8e8] uppercase block mb-2">
                   COMPARE PASSES
                 </span>
-                <h2 className="text-4xl font-black leading-tight ticket-title">
+                <h2 className="text-4xl font-[800] leading-tight ticket-title">
                   Pick your pass
                 </h2>
               </div>
@@ -163,7 +163,7 @@ export default function BuyTickets() {
                     <span className="text-xs font-mono font-bold tracking-widest text-[#12e8e8] uppercase block">
                       {pass.id === "expo" ? "EXPO ONLY" : pass.id === "conference" ? "DELEGATE" : "VIP ACCESS"}
                     </span>
-                    <h3 className="text-xl lg:text-2xl font-black tracking-tight leading-tight ticket-card-title">
+                    <h3 className="text-xl lg:text-2xl font-[800] tracking-tight leading-tight ticket-card-title">
                       {pass.name}
                     </h3>
                     <div className="space-y-1">
@@ -345,7 +345,7 @@ export default function BuyTickets() {
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-black tracking-tight leading-tight ticket-card-title">
+                  <h3 className="text-2xl font-[800] tracking-tight leading-tight ticket-card-title">
                     {pass.name}
                   </h3>
                   <div className="text-right">
@@ -403,3 +403,4 @@ export default function BuyTickets() {
     </section>
   );
 }
+

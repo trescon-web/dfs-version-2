@@ -18,19 +18,19 @@ export default function AboutExperience() {
       tabLabel: "Extended Programme",
       title: "Extended Programme – strategic dialogue, global impact",
       desc: "Engage with global leaders and senior decision-makers across finance, technology, and policy. Each session delivers actionable insights on emerging trends, regulatory evolution, and market-shaping innovations. The extended programme is where influence meets opportunity.",
-      image: getAssetPath("/images/dfs_conference_programme_clean.jpg"),
+      image: getAssetPath("/images/dfs_nasdaq_keynote.jpg"),
     },
     {
       tabLabel: "Exhibition Arena",
       title: "Exhibition Arena – the innovation showcase",
       desc: "Experience breakthrough technologies and solutions across start-up arenas and country pavilions. Engage directly with innovators, explore market-ready developments, and discover platforms driving digital transformation.",
-      image: getAssetPath("/images/innovation_arena_clean.jpg"),
+      image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
     },
     {
       tabLabel: "FinTech World Cup",
       title: "FinTech World Cup Grand Finale",
       desc: "Watch the world’s top FinTech start-ups compete on the Innovation Stage on Day 2 of the Summit, showcasing transformative solutions to a global audience of investors, regulators, and industry leaders. Winners get access to investors, mentorship, and international exposure to accelerate their journey.",
-      image: getAssetPath("/images/fintech_world_cup_grand_finale_clean.jpg"),
+      image: getAssetPath("/images/stage-innovation.png"),
     },
   ];
 
@@ -70,7 +70,7 @@ export default function AboutExperience() {
           <span className="text-xs font-mono font-bold tracking-widest text-[#12e8e8] uppercase block">
             THE SUMMIT ATMOSPHERE
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight exp-head-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight exp-head-title">
             The Dubai FinTech Summit experience
           </h2>
           <p className="text-sm md:text-base leading-relaxed font-semibold exp-head-desc">
@@ -140,3 +140,4 @@ export default function AboutExperience() {
     </section>
   );
 }
+

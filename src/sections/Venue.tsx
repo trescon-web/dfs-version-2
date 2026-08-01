@@ -52,7 +52,7 @@ export default function Venue() {
           <span>LOCATION & VENUE</span>
         </div>
         
-        <h2 className="text-3xl md:text-5xl font-black tracking-[-0.03em] text-slate-900 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-[800] tracking-[-0.03em] text-slate-900 leading-tight">
           Madinat Jumeirah, Dubai
         </h2>
         
@@ -85,3 +85,4 @@ export default function Venue() {
     </section>
   );
 }
+

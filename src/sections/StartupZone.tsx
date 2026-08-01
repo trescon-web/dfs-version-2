@@ -25,7 +25,7 @@ export default function StartupZone() {
           <Cpu className="w-3.5 h-3.5" />
           <span>STARTUP ZONE</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-black tracking-[-0.03em] text-gradient-white">
+        <h2 className="text-3xl md:text-4xl font-[800] tracking-[-0.03em] text-gradient-white">
           The epicentre of fintech startups
         </h2>
         <p className="text-xs md:text-sm text-white/50 max-w-xl leading-relaxed">
@@ -54,3 +54,4 @@ export default function StartupZone() {
     </section>
   );
 }
+

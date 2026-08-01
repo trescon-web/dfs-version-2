@@ -23,7 +23,7 @@ export default function AmbassadorsContent() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6 space-y-8"
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#082028] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-[#082028] leading-tight">
               Join the Dubai FinTech Summit 2026 ambassador programme
             </h2>
             <div className="w-16 h-1 bg-[#12e8e8] rounded-full" />
@@ -62,7 +62,7 @@ export default function AmbassadorsContent() {
             className="lg:col-span-6 relative rounded-3xl overflow-hidden shadow-xl border border-slate-100/50 bg-white p-2"
           >
             <img
-              src={getAssetPath("/images/dfs_vip_delegates_custom.jpg")}
+              src={getAssetPath("/images/dfs_vip_walkthrough.jpg")}
               alt="Join the Dubai FinTech Summit 2026 Ambassador Programme"
               className="w-full h-auto rounded-2xl object-cover block"
               loading="lazy"
@@ -74,3 +74,4 @@ export default function AmbassadorsContent() {
     </section>
   );
 }
+

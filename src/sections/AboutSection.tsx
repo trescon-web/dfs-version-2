@@ -13,7 +13,7 @@ export default function AboutSection() {
           
           {/* Left Column: Text & Content */}
           <div className="text-left space-y-6 max-w-xl">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.05]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-[800] text-slate-900 leading-[1.05]">
               Building a connected, borderless financial world
             </h2>
             
@@ -45,7 +45,7 @@ export default function AboutSection() {
             >
               <div className="absolute inset-0 w-full h-full skew-x-12 scale-125">
                 <Image
-                  src={getAssetPath("/images/dfs_executive_portrait_custom.jpg")}
+                  src={getAssetPath("/images/dfs_nasdaq_keynote.jpg")}
                   alt="Keynote Speaker Panel"
                   fill
                   className="object-cover"
@@ -76,3 +76,4 @@ export default function AboutSection() {
     </section>
   );
 }
+

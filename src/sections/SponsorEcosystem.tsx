@@ -26,7 +26,7 @@ export default function SponsorEcosystem() {
             <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
               06 // Capital Partnerships
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
               The Interactive Sponsor Ecosystem
             </h2>
             <p className="text-sm text-foreground/60 mt-4 leading-relaxed">
@@ -98,7 +98,7 @@ export default function SponsorEcosystem() {
                 <Building2 className={`w-6 h-6 mb-3 transition-colors ${isSelected ? "text-purple-accent animate-pulse" : "text-foreground/40"}`} />
                 
                 {/* Logo Text representation styled like a corporate brand logo */}
-                <h3 className="font-sans font-black tracking-widest text-lg text-white">
+                <h3 className="font-sans font-[800] tracking-widest text-lg text-white">
                   {sp.logo}
                 </h3>
 
@@ -135,7 +135,7 @@ export default function SponsorEcosystem() {
                   <span className="text-[10px] font-mono font-bold text-purple-accent uppercase">
                     Partner Portfolio // {selectedSponsor.tier} Partner
                   </span>
-                  <h3 className="text-2xl font-black text-white tracking-tight">
+                  <h3 className="text-2xl font-[800] text-white tracking-tight">
                     {selectedSponsor.name}
                   </h3>
                   <p className="text-sm text-foreground/60 leading-relaxed">
@@ -192,3 +192,4 @@ export default function SponsorEcosystem() {
     </section>
   );
 }
+

@@ -33,7 +33,7 @@ export default function GetInvolvedSpeak() {
           >
             <div className="relative rounded-3xl overflow-hidden hover:scale-[1.01] transition-transform duration-500">
               <img
-                src={getAssetPath("/images/dfs_executive_portrait_custom.jpg")}
+                src={getAssetPath("/images/dfs_nasdaq_keynote.jpg")}
                 alt="Take the stage speakers"
                 className="w-full h-auto block object-cover"
               />
@@ -49,7 +49,7 @@ export default function GetInvolvedSpeak() {
             className="lg:col-span-5 text-left space-y-6 lg:pl-4"
           >
             <div className="space-y-3">
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none speak-title">
+              <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-none speak-title">
                 Take the stage
               </h2>
               <span className="text-sm font-mono font-bold tracking-widest uppercase block speak-subtitle">
@@ -76,3 +76,4 @@ export default function GetInvolvedSpeak() {
     </section>
   );
 }
+

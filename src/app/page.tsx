@@ -4,6 +4,7 @@ import PatronageSponsors from "@/sections/PatronageSponsors";
 import AboutSection from "@/sections/AboutSection";
 import ImpactSection from "@/sections/ImpactSection";
 import FeaturedSpeakers from "@/sections/FeaturedSpeakers";
+import VideoSection from "@/sections/VideoSection";
 import JoinNetwork from "@/sections/JoinNetwork";
 import WhyAttend from "@/sections/WhyAttend";
 import ConnectingCapitals from "@/sections/ConnectingCapitals";
@@ -27,6 +28,7 @@ export default function Home() {
         <AboutSection />
         <ImpactSection />
         <FeaturedSpeakers />
+        <VideoSection />
         <JoinNetwork />
         <WhyAttend />
         <ConnectingCapitals />
@@ -38,9 +40,6 @@ export default function Home() {
 
       {/* Global Footer */}
       <Footer />
-
-      {/* Scroll-triggered sticky bottom banner */}
-      <StickyBottomBanner />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import StickyBottomBanner from "@/components/StickyBottomBanner";
 
 export const metadata: Metadata = {
   title: "Dubai FinTech Summit 2026 | The Future of Global Finance",
@@ -25,10 +26,16 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased"
     >
+      <head>
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+      </head>
       <body className="min-h-full bg-midnight text-foreground font-sans">
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <StickyBottomBanner />
       </body>
     </html>
   );

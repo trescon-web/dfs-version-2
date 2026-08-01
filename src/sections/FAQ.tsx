@@ -40,7 +40,7 @@ export default function FAQ() {
             <HelpCircle className="w-3.5 h-3.5" />
             <span>INFORMATION CENTER</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
             Frequently asked questions
           </h2>
         </div>
@@ -100,3 +100,4 @@ export default function FAQ() {
     </section>
   );
 }
+

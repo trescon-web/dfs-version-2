@@ -71,7 +71,7 @@ export default function PatronageSponsors() {
 
         {/* H.H. Sheikh Maktoum Name */}
         <h2 
-          className="text-base sm:text-xl md:text-2xl lg:text-[26px] font-black tracking-tight leading-snug px-2 text-wrap"
+          className="text-base sm:text-xl md:text-2xl lg:text-[26px] font-[800] tracking-tight leading-snug px-2 text-wrap"
           style={{ color: "#12E9E9" }}
         >
           H.H. Sheikh Maktoum bin Mohammed bin Rashid Al Maktoum
@@ -152,3 +152,4 @@ export default function PatronageSponsors() {
     </section>
   );
 }
+

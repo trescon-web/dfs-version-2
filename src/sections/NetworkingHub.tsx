@@ -110,7 +110,7 @@ export default function NetworkingHub() {
           <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
             08 // Dynamic Connections
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
             AI-Powered Matchmaking Hub
           </h2>
           <p className="text-sm md:text-base text-foreground/60 mt-4 leading-relaxed">
@@ -126,7 +126,7 @@ export default function NetworkingHub() {
             <div className="space-y-6">
               <div className="flex items-center space-x-2 text-purple-accent">
                 <Sparkles className="w-5 h-5 animate-pulse" />
-                <h3 className="text-xs uppercase tracking-widest font-black">Matchmaker Engine</h3>
+                <h3 className="text-xs uppercase tracking-widest font-[800]">Matchmaker Engine</h3>
               </div>
 
               {/* 1. User Identity */}
@@ -315,3 +315,4 @@ export default function NetworkingHub() {
     </section>
   );
 }
+

@@ -1,159 +1,100 @@
 "use client";
 import { getAssetPath } from "@/utils/assetPath";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import Image from "next/image";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-
-interface SliderCard {
-  title: string;
-  img: string;
-  scene: string;
-  tagline: string;
-  desc: string;
-  objectPos?: string;
-}
+import { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 export default function LeadershipSlider() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  const cards: SliderCard[] = [
+  const cards = [
     {
       title: "Exclusive ecosystem events",
       img: getAssetPath("/images/exclusive_ecosystem_events_clean.jpg"),
-      scene: "01",
       tagline: "PILLAR 01",
-      desc: "Invite-only sessions and workshops designed for decision-makers driving change across FinTech."
+      desc: "Invite-only sessions and workshops for decision-makers.",
+      link: getAssetPath("/about/")
     },
     {
       title: "Conference programme",
       img: getAssetPath("/images/dfs_conference_programme_clean.jpg"),
-      scene: "02",
       tagline: "PILLAR 02",
-      desc: "Dive into powerful keynotes and sharp panel debates that tackle the real issues shaping global finance."
+      desc: "Keynotes and panels tackling global finance.",
+      link: getAssetPath("/speakers/")
     },
     {
       title: "The innovation arena",
       img: getAssetPath("/images/innovation_arena_clean.jpg"),
-      scene: "03",
       tagline: "PILLAR 03",
-      desc: "Explore breakthrough technologies and meet the companies redefining financial services."
+      desc: "Breakthrough technologies redefining financial services.",
+      link: getAssetPath("/exhibitors/")
     },
     {
       title: "Strategic networking",
-      img: getAssetPath("/images/dfs_strategic_networking_custom_clean.jpg"),
-      scene: "04",
+      img: getAssetPath("/images/dfs_networking_hall.jpg"),
       tagline: "PILLAR 04",
-      desc: "Connect with industry leaders, investors, and innovators ready to turn ideas into action."
+      desc: "Connect with leaders, investors, and innovators.",
+      link: getAssetPath("/get-involved/")
     },
     {
       title: "FinTech launchpad",
-      img: getAssetPath("/images/dfs_fintech_launchpad_custom_clean.jpg"),
-      scene: "05",
+      img: getAssetPath("/images/stage-innovation.png"),
       tagline: "PILLAR 05",
-      desc: "A platform for announcements, innovations, collaboration, and key connections."
+      desc: "Announcements, innovations, and key connections.",
+      link: getAssetPath("/fintech-launchpad/")
     },
     {
       title: "DFS dialogues",
       img: getAssetPath("/images/dfs_dialogues_clean.jpg"),
-      scene: "06",
       tagline: "PILLAR 06",
-      desc: "Closed-door discussions among policymakers and C-suite leaders providing regulatory and market insights."
+      desc: "Closed-door discussions with policymakers and C-suite.",
+      link: getAssetPath("/roundtables-workshops/")
     },
     {
       title: "MOUs and partnerships",
       img: getAssetPath("/images/mous_partnerships_clean.jpg"),
-      scene: "07",
       tagline: "PILLAR 07",
-      desc: "Build high-impact alliances with the people and companies transforming the FinTech landscape.",
-      objectPos: "object-top"
+      desc: "High-impact alliances transforming FinTech.",
+      link: getAssetPath("/get-involved/")
     },
     {
       title: "FinTech World Cup grand finale",
-      img: getAssetPath("/images/fintech_world_cup_grand_finale_clean.jpg"),
-      scene: "08",
+      img: getAssetPath("/images/fintech_world_cup_winners.jpg"),
       tagline: "PILLAR 08",
-      desc: "Watch top start-ups battle it out live for global recognition, rewards, and investment."
+      desc: "Top start-ups battle for global recognition.",
+      link: getAssetPath("/fintech-launchpad/")
     },
   ];
 
-  const isMouseDownRef = useRef(false);
-  const startXRef = useRef(0);
-  const scrollLeftRef = useRef(0);
+  // Auto-advance every 5s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % cards.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [cards.length]);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    isMouseDownRef.current = true;
-    startXRef.current = e.pageX - scrollRef.current.offsetLeft;
-    scrollLeftRef.current = scrollRef.current.scrollLeft;
-    // Disable snap & smooth behavior during active mouse drag for fluid motion
-    scrollRef.current.style.scrollSnapType = "none";
-    scrollRef.current.style.scrollBehavior = "auto";
-  };
+  // Scroll active card to center
+  useEffect(() => {
+    if (!trackRef.current) return;
+    const track = trackRef.current;
+    const card = track.children[activeIndex] as HTMLElement;
+    if (!card) return;
+    const scrollLeft = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+    track.scrollTo({ left: scrollLeft, behavior: "smooth" });
+  }, [activeIndex]);
 
-  const handleMouseLeave = () => {
-    if (!isMouseDownRef.current || !scrollRef.current) return;
-    isMouseDownRef.current = false;
-    scrollRef.current.style.scrollSnapType = "x mandatory";
-    scrollRef.current.style.scrollBehavior = "smooth";
-  };
-
-  const handleMouseUp = () => {
-    if (!isMouseDownRef.current || !scrollRef.current) return;
-    isMouseDownRef.current = false;
-    scrollRef.current.style.scrollSnapType = "x mandatory";
-    scrollRef.current.style.scrollBehavior = "smooth";
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isMouseDownRef.current || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startXRef.current) * 1.6; // Smooth 1:1.6 drag velocity multiplier
-    scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
-  };
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.75;
-      scrollRef.current.scrollTo({
-        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+  const goNext = () => setActiveIndex((prev) => (prev + 1) % cards.length);
+  const goPrev = () => setActiveIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
   return (
-    <section id="leadership" className="relative py-28 md:py-36 overflow-hidden bg-[#02090f] border-t border-white/5">
-      
-      {/* Explicit style overrides to defeat global theme CSS color rules */}
-      <style dangerouslySetInnerHTML={{__html: `
-        #leadership h2 {
-          color: #ffffff !important;
-        }
-        #leadership h2 span {
-          color: #12E9E9 !important;
-        }
-        #leadership .card-title {
-          color: #ffffff !important;
-        }
-        #leadership .group:hover .card-title {
-          color: #12E9E9 !important;
-        }
-        #leadership .card-desc {
-          color: rgba(255, 255, 255, 0.95) !important;
-          font-weight: 400 !important;
-        }
-      `}} />
+    <section id="leadership" className="relative py-20 md:py-28 overflow-hidden bg-[#02090f] border-t border-white/5">
 
-      {/* Background ambient cinematic spotlight glow */}
+      {/* Background glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[300px] bg-[#12E9E9]/5 rounded-full blur-[150px] pointer-events-none z-0" />
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[250px] bg-[#12E9E9]/3 rounded-full blur-[130px] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full space-y-16">
-        
-        {/* Header Block */}
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10 mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4 max-w-2xl text-left">
             <div className="flex items-center space-x-3">
@@ -162,105 +103,164 @@ export default function LeadershipSlider() {
                 SUMMIT HIGHLIGHTS
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-black leading-[1.1] tracking-tight text-white">
-              Global leadership. Strategic dialogue. <span className="text-[#12E9E9]">High-impact innovation.</span>
+            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-[800] leading-[1.1] tracking-tight" style={{ color: "#ffffff" }}>
+              Global leadership. Strategic dialogue.{" "}
+              <span style={{ color: "#12E9E9" }}>High-impact innovation.</span>
             </h2>
           </div>
 
           <div className="flex items-center space-x-4 shrink-0 pb-1">
-            {/* Draggable scroll assistance arrows */}
             <button
-              onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full bg-[#12E9E9] text-[#02090f] hover:bg-white hover:scale-105 transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg shadow-[#12E9E9]/20"
-              aria-label="Scroll left"
+              onClick={goPrev}
+              style={{ backgroundColor: "#12E9E9", color: "#02090f" }}
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-lg shadow-[#12E9E9]/25 hover:bg-white hover:scale-105"
+              aria-label="Previous slide"
             >
-              <ArrowLeft className="w-5 h-5 stroke-[2.5] text-[#02090f] stroke-[#02090f]" />
+              <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
             </button>
-            
             <button
-              onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full bg-[#12E9E9] text-[#02090f] hover:bg-white hover:scale-105 transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg shadow-[#12E9E9]/20"
-              aria-label="Scroll right"
+              onClick={goNext}
+              style={{ backgroundColor: "#12E9E9", color: "#02090f" }}
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-lg shadow-[#12E9E9]/25 hover:bg-white hover:scale-105"
+              aria-label="Next slide"
             >
-              <ArrowRight className="w-5 h-5 stroke-[2.5] text-[#02090f] stroke-[#02090f]" />
+              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
             </button>
-
-            {/* Buy a pass CTA */}
-            <a
-              href="#tickets"
-              className="btn-unified"
-            >
+            <a href="#tickets" className="btn-unified">
               <span>Buy a pass</span>
               <ArrowUpRight className="w-4 h-4 text-[#082028] stroke-[#082028] stroke-[2.5]" />
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Horizontal Widescreen Slider Track with Mouse Drag & Touch Support */}
-        <div
-          ref={scrollRef}
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          className="flex space-x-8 overflow-x-auto scrollbar-none pb-8 snap-x snap-mandatory w-full z-10 cursor-grab active:cursor-grabbing select-none"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {cards.map((card, idx) => (
-            <motion.div
+      {/* Apple TV+ Carousel Track */}
+      <div
+        ref={trackRef}
+        className="flex gap-5 relative z-10 select-none"
+        style={{
+          overflowX: "auto",
+          scrollbarWidth: "none",
+          paddingLeft: "10vw",
+          paddingRight: "10vw",
+          scrollSnapType: "x mandatory",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        {cards.map((card, idx) => {
+          const isActive = idx === activeIndex;
+          return (
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.08 }}
-              className="group min-w-[280px] sm:min-w-[340px] md:min-w-[480px] max-w-[480px] rounded-3xl border border-white/10 bg-[#061f2e]/90 flex flex-col snap-start transition-all hover:border-[#12E9E9]/40 select-none text-left overflow-hidden h-[480px] sm:h-[520px] md:h-[560px] cursor-grab active:cursor-grabbing shadow-2xl relative shrink-0"
+              onClick={() => setActiveIndex(idx)}
+              className="relative shrink-0 rounded-[20px] md:rounded-[28px] overflow-hidden cursor-pointer transition-all duration-500 shadow-2xl"
+              style={{
+                width: "clamp(320px, 60vw, 900px)",
+                height: "clamp(220px, 35vw, 520px)",
+                scrollSnapAlign: "center",
+                transform: isActive ? "scale(1)" : "scale(0.92)",
+                opacity: isActive ? 1 : 0.5,
+                boxShadow: isActive ? "0 20px 60px rgba(18,233,233,0.2)" : "0 10px 30px rgba(0,0,0,0.5)",
+                transition: "transform 0.5s cubic-bezier(0.25,0.1,0.25,1), opacity 0.5s ease, box-shadow 0.5s ease",
+              }}
             >
-              {/* Top border anamorphic lens flare glow effect */}
-              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
-
-              {/* Card Photo Backdrop with smooth zoom */}
-              <Image
+              {/* Background Image */}
+              <img
                 src={card.img}
                 alt={card.title}
-                fill
-                className={`object-cover ${card.objectPos || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.06]`}
-                sizes="(max-width: 768px) 90vw, 480px"
+                draggable={false}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                }}
               />
 
-              {/* Cinematic Vignette Shadow and Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.55)_100%)] z-10 pointer-events-none" />
+              {/* Dark gradient overlay */}
+              <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
+                zIndex: 10
+              }} />
 
-              {/* Slide Scene counter in corner */}
-              <div className="absolute top-6 right-6 z-20 font-mono text-[9px] font-bold text-white/30 tracking-widest group-hover:text-[#12E9E9]/60 transition-colors">
-                SCENE // {card.scene}
+              {/* Top-right DFS badge */}
+              <div style={{
+                position: "absolute",
+                top: "20px",
+                right: "20px",
+                zIndex: 20,
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                background: "rgba(0,0,0,0.4)",
+                backdropFilter: "blur(12px)",
+                padding: "6px 14px",
+                borderRadius: "9999px",
+                border: "1px solid rgba(255,255,255,0.2)",
+              }}>
+                <span style={{ color: "#12e9e9", fontSize: "14px" }}>✦</span>
+                <span style={{ color: "#fff", fontSize: "11px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>DFS 2026</span>
               </div>
 
-              {/* Bottom Details (Title, tag, expanding accent line) */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left space-y-1">
-                <span className="block text-[10px] md:text-xs font-mono font-bold tracking-[0.25em] text-[#12E9E9] uppercase">
+              {/* Bottom content */}
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "28px 32px", zIndex: 20, textAlign: "left" }}>
+                <span style={{ display: "block", fontSize: "10px", fontFamily: "monospace", fontWeight: 700, letterSpacing: "0.25em", color: "#12E9E9", textTransform: "uppercase", marginBottom: "4px" }}>
                   {card.tagline}
                 </span>
-                
-                <span className="block text-xl md:text-3xl font-black tracking-tight text-white leading-tight group-hover:text-[#12E9E9] transition-colors duration-300 card-title" style={{ color: "#ffffff" }}>
-                  {card.title}
-                </span>
 
-                {/* Smooth Slide-down Hover Description text */}
-                <p 
-                  className="text-[15px] md:text-[17px] font-normal leading-relaxed max-h-0 opacity-0 group-hover:max-h-[120px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden mt-1.5 card-desc"
-                  style={{ color: "rgba(255, 255, 255, 0.95)" }}
-                >
+                <h3 style={{
+                  fontSize: "clamp(20px, 2vw, 30px)",
+                  fontWeight: 900,
+                  color: "#ffffff",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.15,
+                  marginBottom: "6px",
+                }}>
+                  {card.title}
+                </h3>
+
+                <p style={{
+                  fontSize: "15px",
+                  fontWeight: 400,
+                  color: "rgba(255,255,255,0.85)",
+                  lineHeight: 1.5,
+                  marginBottom: "12px",
+                }}>
                   {card.desc}
                 </p>
-                
-                {/* Horizontal turquoise bar underline that expands on hover */}
-                <div className="w-8 group-hover:w-16 h-[2px] bg-[#12E9E9] mt-3 rounded-full transition-all duration-500 ease-out" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
+                <div style={{ width: "32px", height: "2px", background: "#12E9E9", borderRadius: "9999px" }} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Dot pagination */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginTop: "40px", position: "relative", zIndex: 10 }}>
+        {cards.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveIndex(idx)}
+            style={{
+              height: "8px",
+              width: idx === activeIndex ? "32px" : "8px",
+              borderRadius: "9999px",
+              background: idx === activeIndex ? "#12e9e9" : "rgba(255,255,255,0.3)",
+              boxShadow: idx === activeIndex ? "0 0 10px #12e9e9" : "none",
+              border: "none",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              padding: 0,
+            }}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

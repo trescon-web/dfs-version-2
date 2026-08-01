@@ -80,7 +80,7 @@ export default function AboutStory() {
           <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
             01 // Global Convergence
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
             DIFC: The Epicenter of Future Capital
           </h2>
           <p className="text-sm md:text-base text-foreground/60 mt-4 leading-relaxed">
@@ -234,3 +234,4 @@ export default function AboutStory() {
     </section>
   );
 }
+

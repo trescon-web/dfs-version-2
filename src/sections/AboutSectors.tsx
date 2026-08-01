@@ -22,26 +22,44 @@ export default function AboutSectors() {
 
   return (
     <section 
-      className="relative py-24 bg-[#02090f] bg-cover bg-bottom no-repeat border-t border-white/5"
+      className="relative py-24 bg-[#f8fafc] bg-cover bg-bottom no-repeat border-t border-slate-200"
       style={{ 
-        backgroundImage: `url(${getAssetPath("/images/curated-bg.png")})`,
+        backgroundImage: `url(${getAssetPath("/images/sectors-light-bg.png")})`,
         backgroundPosition: "center bottom",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
       }}
     >
-      {/* Dark overlay to dim/dull the background image for high text readability */}
-      <div className="absolute inset-0 bg-[#02090f]/75 pointer-events-none z-0" />
+      {/* Light subtle overlay if the image pattern is too strong, else just clear */}
+      <div className="absolute inset-0 bg-white/40 pointer-events-none z-0" />
 
-      {/* Local CSS overrides to enforce correct contrast */}
+      {/* Bulletproof CSS for Sector Card Dark Hover */}
       <style dangerouslySetInnerHTML={{__html: `
-        .sectors-title {
-          color: #ffffff !important;
+        .sector-card-item {
+          background-color: #ffffff;
+          border-color: rgba(226, 232, 240, 0.9);
+          transition: all 0.3s ease;
         }
-        .sectors-card-text {
-          color: #ffffff !important;
+        .sector-card-item:hover {
+          background-color: #02090f !important;
+          border-color: #1e293b !important;
+          transform: translateY(-4px);
+          box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4) !important;
         }
-        .sectors-card:hover .sectors-card-text {
-          color: #12e8e8 !important;
+        .sector-card-item .sector-icon {
+          color: #0b766e;
+          transition: all 0.3s ease;
+        }
+        .sector-card-item:hover .sector-icon {
+          color: #12e9e9 !important;
+          transform: scale(1.15);
+        }
+        .sector-card-item .sector-text {
+          color: #0f172a !important;
+          transition: all 0.3s ease;
+        }
+        .sector-card-item:hover .sector-text {
+          color: #ffffff !important;
         }
       `}} />
 
@@ -49,10 +67,10 @@ export default function AboutSectors() {
         
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-2xl mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-[#12e8e8] uppercase block">
+          <span className="text-xs font-mono font-bold tracking-widest text-[#0b766e] uppercase block bg-[#0b766e]/10 inline-block px-3.5 py-1.5 rounded-full">
             ECOSYSTEM SEGMENTS
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight sectors-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight text-slate-900">
             Industry sectors represented
           </h2>
         </div>
@@ -66,10 +84,10 @@ export default function AboutSectors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.03 }}
-              className="flex items-center space-x-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-[#12e8e8]/30 hover:bg-[#12e8e8]/5 transition-all duration-300 group cursor-default sectors-card shadow-sm"
+              className="flex items-center space-x-3.5 p-4 rounded-2xl border cursor-default shadow-sm sector-card-item"
             >
-              <CheckCircle className="w-4 h-4 text-white/50 group-hover:text-[#12e8e8] transition-colors shrink-0" />
-              <span className="font-sans text-base font-bold sectors-card-text transition-colors">
+              <CheckCircle className="w-4 h-4 shrink-0 sector-icon" />
+              <span className="font-sans text-sm font-bold sector-text">
                 {sector}
               </span>
             </motion.div>
@@ -80,3 +98,4 @@ export default function AboutSectors() {
     </section>
   );
 }
+

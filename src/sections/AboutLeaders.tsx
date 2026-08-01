@@ -19,64 +19,64 @@ export default function AboutLeaders() {
       id: "01",
       title: "Global FinTech leaders and innovators",
       tag: "INNOVATORS",
-      image: getAssetPath("/images/dfs_vip_delegates_custom.jpg"),
+      image: getAssetPath("/images/Global-FinTech-leaders-and-innovators-Img.webp"),
       metrics: "2,500+",
       subtitle: "Unicorn founders, digital pioneers & disruptive startups",
-      gridClass: "lg:col-span-8"
+      gridClass: "lg:col-span-3 lg:row-span-2 h-[400px] lg:h-[664px]"
     },
     {
       id: "02",
       title: "Financial institutions",
       tag: "BANKING",
-      image: getAssetPath("/images/dfs_entrance_hall.jpg"),
+      image: getAssetPath("/images/Financial-institutions-Img.webp"),
       metrics: "450+",
       subtitle: "Tier-1 retail banks, investment houses & neo-banks",
-      gridClass: "lg:col-span-4"
+      gridClass: "lg:col-span-3 h-[320px]"
     },
     {
       id: "03",
       title: "Technology and data experts",
       tag: "TECH LEADS",
-      image: getAssetPath("/images/dfs_networking_hall.jpg"),
+      image: getAssetPath("/images/Technology-and-data-experts-Img.webp"),
       metrics: "1,200+",
       subtitle: "Cloud architects, AI specialists & security pioneers",
-      gridClass: "lg:col-span-4"
+      gridClass: "lg:col-span-3 h-[320px]"
     },
     {
       id: "04",
       title: "Investors and capital providers",
       tag: "CAPITAL",
-      image: getAssetPath("/images/dfs_sponsors_visa_booth.jpg"),
+      image: getAssetPath("/images/Investors-and-capital-providers-Img.webp"),
       metrics: "$4Trn+",
       subtitle: "Venture capital, angel networks & sovereign wealth",
-      gridClass: "lg:col-span-8"
+      gridClass: "lg:col-span-3 h-[320px]"
     },
     {
       id: "05",
       title: "Policymakers and regulators",
       tag: "GOVERNANCE",
-      image: getAssetPath("/images/dfs_executive_portrait_custom.jpg"),
+      image: getAssetPath("/images/Policymakers-and-regulators-Img.webp"),
       metrics: "60+",
       subtitle: "Central bankers, legal advisors & sandbox architects",
-      gridClass: "lg:col-span-4"
+      gridClass: "lg:col-span-3 h-[320px]"
     },
     {
       id: "06",
       title: "Ecosystem builders and partners",
       tag: "ALLIANCES",
-      image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
+      image: getAssetPath("/images/Ecosystem-builders-and-partners-Img.webp"),
       metrics: "180+",
       subtitle: "Accelerators, research hubs & academic networks",
-      gridClass: "lg:col-span-4"
+      gridClass: "lg:col-span-3 h-[320px]"
     },
     {
       id: "07",
       title: "Thought leaders and media",
       tag: "PRESS",
-      image: getAssetPath("/images/dfs_female_executive_custom.jpg"),
+      image: getAssetPath("/images/Thought-leaders-and-media-Img.webp"),
       metrics: "120+",
       subtitle: "Journalists, authors & industry analysis publishers",
-      gridClass: "lg:col-span-4"
+      gridClass: "lg:col-span-3 h-[320px]"
     }
   ];
 
@@ -99,20 +99,20 @@ export default function AboutLeaders() {
         }
       `}} />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10 w-full flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center">
         
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-2xl mb-20">
           <span className="text-xs font-mono font-bold tracking-widest text-[#0d9488] uppercase block">
             PARTICIPANTS MATRIX
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight leaders-head">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight leaders-head">
             FinTech leaders in attendance
           </h2>
         </div>
 
         {/* Editorial Asymmetric Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-2 gap-6 w-full">
           {leaders.map((leader, index) => (
             <motion.div
               key={index}
@@ -120,7 +120,7 @@ export default function AboutLeaders() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className={`relative h-[320px] rounded-[32px] overflow-hidden flex flex-col justify-between p-8 text-left border border-slate-200/30 shadow-xl group hover:-translate-y-1.5 transition-all duration-500 cursor-pointer ${leader.gridClass}`}
+              className={`relative rounded-[32px] overflow-hidden flex flex-col justify-between p-8 text-left border border-slate-200/30 shadow-xl group hover:-translate-y-1.5 transition-all duration-500 cursor-pointer ${leader.gridClass}`}
             >
               {/* Card Image */}
               <div 
@@ -128,8 +128,8 @@ export default function AboutLeaders() {
                 style={{ backgroundImage: `url('${leader.image}')` }}
               />
 
-              {/* Card Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 to-transparent z-10 pointer-events-none" />
+              {/* Card Overlay - Reduced gradient height and intensity */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#02090f]/95 to-transparent z-10 pointer-events-none" />
 
               {/* Top Row: Tag & Metrics */}
               <div className="relative z-20 flex justify-between items-start w-full">
@@ -147,7 +147,7 @@ export default function AboutLeaders() {
               {/* Bottom Row: Text Details */}
               <div className="relative z-20 w-full space-y-2">
                 <div className="flex items-end justify-between">
-                  <h3 className="text-xl md:text-2xl font-black tracking-tight leading-tight ld-title max-w-xl group-hover:text-[#12e8e8] transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-[800] tracking-tight leading-tight ld-title max-w-xl group-hover:text-[#12e8e8] transition-colors duration-300">
                     {leader.title}
                   </h3>
                   
@@ -172,3 +172,4 @@ export default function AboutLeaders() {
     </section>
   );
 }
+

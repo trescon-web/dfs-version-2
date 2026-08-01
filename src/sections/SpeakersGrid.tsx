@@ -35,7 +35,7 @@ export default function SpeakersGrid() {
             <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
               03 // Global Faculty
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
               Pioneering Minds of Global Finance
             </h2>
             <p className="text-sm text-foreground/60 mt-4 leading-relaxed">
@@ -183,7 +183,7 @@ export default function SpeakersGrid() {
                     <span className="text-xs font-mono font-bold text-emerald-accent uppercase tracking-wider">
                       {selectedSpeaker.company} ({selectedSpeaker.country})
                     </span>
-                    <h3 className="text-2xl font-black tracking-tight text-white mt-1">
+                    <h3 className="text-2xl font-[800] tracking-tight text-white mt-1">
                       {selectedSpeaker.name}
                     </h3>
                     <p className="text-sm text-foreground/60 mt-1">
@@ -276,3 +276,4 @@ export default function SpeakersGrid() {
     </section>
   );
 }
+

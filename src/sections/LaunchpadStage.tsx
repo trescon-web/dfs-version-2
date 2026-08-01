@@ -30,7 +30,7 @@ export default function LaunchpadStage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 space-y-6"
             >
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#082028] leading-tight">
+              <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-[#082028] leading-tight">
                 A global stage for FinTech innovation
               </h2>
               <div className="w-16 h-1 bg-[#12e8e8] rounded-full" />
@@ -95,7 +95,7 @@ export default function LaunchpadStage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 space-y-6 order-1 lg:order-2"
             >
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl font-[800] tracking-tight leading-tight">
                 Join a premier showcase of bold ideas and brilliant minds
               </h2>
               <div className="w-16 h-1 bg-[#12e8e8] rounded-full" />
@@ -132,3 +132,4 @@ export default function LaunchpadStage() {
     </div>
   );
 }
+

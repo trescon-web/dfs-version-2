@@ -10,7 +10,7 @@ export default function IndustryThemes() {
     {
       icon: Brain,
       title: "AI & Cognitive Finance",
-      tag: "TRACK 01 // COGNITIVE",
+      tag: "COGNITIVE FINANCE",
       desc: "Delve into the integration of Generative AI, machine learning predictive risk assessment, automated credit models, and algorithmic trading platforms driving the next generation of asset management.",
       points: [
         "LLMs in retail banking customer queries",
@@ -22,7 +22,7 @@ export default function IndustryThemes() {
     {
       icon: Zap,
       title: "Decentralized Finance (DeFi)",
-      tag: "TRACK 02 // LIQUIDITY",
+      tag: "LIQUIDITY & DEFI",
       desc: "Explore smart-contract settlement systems, institutional Web3 liquidity vaults, real-world asset tokenization, and digital sovereign payment rails redefining transacting protocols.",
       points: [
         "RWA Tokenization: Real estate & bonds",
@@ -34,7 +34,7 @@ export default function IndustryThemes() {
     {
       icon: ShieldCheck,
       title: "Global Policy & Regs",
-      tag: "TRACK 03 // COMPLIANCE",
+      tag: "POLICY & COMPLIANCE",
       desc: "Establish compliance blueprints for emerging technology frameworks, data governance standards, cross-border payments, and unified licensing regimes.",
       points: [
         "Cryptocurrency regulatory frameworks",
@@ -46,7 +46,7 @@ export default function IndustryThemes() {
     {
       icon: Cpu,
       title: "Digital Sovereign Rails",
-      tag: "TRACK 04 // SETTLEMENT",
+      tag: "DIGITAL SOVEREIGN RAILS",
       desc: "Analyse real-time gross settlement systems, central bank digital currencies (CBDCs), instant clearing integrations, and the hardware infrastructures underpinning them.",
       points: [
         "Wholesale CBDC cross-border settlement",
@@ -68,7 +68,7 @@ export default function IndustryThemes() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>SUMMIT TAXONOMY</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
             Core industry themes
           </h2>
           <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -152,3 +152,4 @@ export default function IndustryThemes() {
     </section>
   );
 }
+

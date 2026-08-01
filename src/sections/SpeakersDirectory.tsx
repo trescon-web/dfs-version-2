@@ -800,7 +800,7 @@ export default function SpeakersDirectory({
               {/* Speaker metadata & bio */}
               <div className="flex-grow space-y-4 w-full">
                 <div className="space-y-1 text-center md:text-left pr-6">
-                  <h3 className="text-2xl md:text-3xl font-black text-[#082028] tracking-tight leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-[800] text-[#082028] tracking-tight leading-tight">
                     {selectedSpeaker.name}
                   </h3>
                   <p className="text-sm font-mono font-bold uppercase tracking-wider text-[#b45309]">

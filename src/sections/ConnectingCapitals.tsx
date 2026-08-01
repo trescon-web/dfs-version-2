@@ -141,7 +141,7 @@ export default function ConnectingCapitals() {
                 </span>
               </div>
               
-              <h2 className="text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.08] tracking-tight text-white" style={{ color: "#ffffff" }}>
+              <h2 className="text-4xl md:text-5xl lg:text-[54px] font-[800] leading-[1.08] tracking-tight text-white" style={{ color: "#ffffff" }}>
                 Connecting <br />
                 the world's <br />
                 <span style={{ color: "#12E9E9" }}>financial capitals</span>
@@ -198,7 +198,7 @@ export default function ConnectingCapitals() {
                       {pillars[activeStatIdx].eyebrow}
                     </span>
 
-                    <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight" style={{ color: "#ffffff" }}>
+                    <h3 className="text-2xl md:text-3xl font-[800] text-white tracking-tight leading-tight" style={{ color: "#ffffff" }}>
                       {pillars[activeStatIdx].title}
                     </h3>
 
@@ -235,3 +235,4 @@ export default function ConnectingCapitals() {
     </section>
   );
 }
+

@@ -29,96 +29,121 @@ export default function Navbar() {
     }
 
     const query = searchVal.trim().toLowerCase();
-    const results: SearchResult[] = [];
+    const queryWords = query.split(/\s+/).filter(Boolean);
+    const scoredResults: { score: number; item: SearchResult }[] = [];
 
     for (const item of searchIndex) {
-      const titleMatch = item.title.toLowerCase().includes(query);
-      
-      let matchedText = "";
+      const titleLower = item.title.toLowerCase();
+      const combinedText = (item.title + " " + item.texts.join(" ")).toLowerCase();
+
+      // Check if query or words match
+      const allWordsMatch = queryWords.every(w => combinedText.includes(w));
+      const anyWordMatches = queryWords.some(w => combinedText.includes(w));
+
+      if (!allWordsMatch && !anyWordMatches) continue;
+
+      // Calculate score
+      let score = 0;
+      if (titleLower.includes(query)) score += 100;
+      if (allWordsMatch) score += 50;
+
+      for (const w of queryWords) {
+        if (titleLower.includes(w)) score += 20;
+        if (combinedText.includes(w)) score += 5;
+      }
+
+      // Find best snippet
+      let bestSnippet = item.texts[0] || item.title;
+      let maxSnippetMatches = 0;
+
       for (const txt of item.texts) {
-        if (txt.toLowerCase().includes(query)) {
-          matchedText = txt;
-          break;
+        const txtLower = txt.toLowerCase();
+        let matches = 0;
+        for (const w of queryWords) {
+          if (txtLower.includes(w)) matches++;
+        }
+        if (matches > maxSnippetMatches) {
+          maxSnippetMatches = matches;
+          bestSnippet = txt;
         }
       }
 
-      if (titleMatch || matchedText) {
-        let snippet = matchedText;
-        if (!snippet) {
-          snippet = item.texts[0] || "";
+      // Format snippet length
+      let formattedSnippet = bestSnippet;
+      if (formattedSnippet.length > 110) {
+        const firstWord = queryWords[0] || query;
+        const idx = formattedSnippet.toLowerCase().indexOf(firstWord);
+        if (idx !== -1) {
+          const start = Math.max(0, idx - 25);
+          formattedSnippet = (start > 0 ? "..." : "") + formattedSnippet.substring(start, start + 110) + "...";
+        } else {
+          formattedSnippet = formattedSnippet.substring(0, 110) + "...";
         }
+      }
 
-        if (snippet.length > 90) {
-          const idx = snippet.toLowerCase().indexOf(query);
-          if (idx !== -1) {
-            const start = Math.max(0, idx - 30);
-            snippet = (start > 0 ? "..." : "") + snippet.substring(start, start + 90) + "...";
-          } else {
-            snippet = snippet.substring(0, 90) + "...";
-          }
-        }
-
-        results.push({
+      scoredResults.push({
+        score,
+        item: {
           title: item.title,
           href: item.href,
-          snippet: snippet
-        });
+          snippet: formattedSnippet
+        }
+      });
+    }
 
-        if (results.length >= 6) break;
+    // Sort by score descending and take top 10
+    scoredResults.sort((a, b) => b.score - a.score);
+    setSearchResults(scoredResults.slice(0, 12).map(r => r.item));
+  }, [searchVal]);
+
+  const handleSelectResult = (targetHref: string) => {
+    const finalUrl = getAssetPath(targetHref);
+    setSearchOpen(false);
+    setSearchVal("");
+
+    if (targetHref.includes("#")) {
+      const [pagePath, elementId] = targetHref.split("#");
+      const currentPath = window.location.pathname.replace(/\/$/, "");
+      const targetPath = getAssetPath(pagePath || "/").replace(/\/$/, "");
+
+      if (currentPath === targetPath || currentPath === targetPath.replace(/\/dfs-version-2$/, "")) {
+        const elem = document.getElementById(elementId);
+        if (elem) {
+          elem.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
       }
     }
 
-    setSearchResults(results);
-  }, [searchVal]);
+    window.location.href = finalUrl;
+  };
 
   const handleSearchSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     
     if (searchResults.length > 0) {
-      window.location.href = searchResults[0].href;
-      setSearchOpen(false);
-      setSearchVal("");
+      handleSelectResult(searchResults[0].href);
       return;
     }
 
     const query = searchVal.trim().toLowerCase();
     if (!query) return;
     
-    setSearchOpen(false);
-    setSearchVal("");
-
-    if (query.includes("take the stage") || query.includes("speak") || query.includes("speaking") || query.includes("become a speaker")) {
-      window.location.href = getAssetPath("/get-involved#speak");
-    } else if (query.includes("exhibitor")) {
-      window.location.href = getAssetPath("/exhibitors");
-    } else if (query.includes("sponsor")) {
-      window.location.href = getAssetPath("/sponsors");
-    } else if (query.includes("speaker")) {
-      window.location.href = getAssetPath("/speakers");
-    } else if (query.includes("blog") || query.includes("news") || query.includes("article")) {
-      window.location.href = getAssetPath("/blog");
-    } else if (query.includes("about")) {
-      window.location.href = getAssetPath("/about");
-    } else if (query.includes("media") || query.includes("partner")) {
-      window.location.href = getAssetPath("/media-partners");
-    } else if (query.includes("association")) {
-      window.location.href = getAssetPath("/associations");
-    } else if (query.includes("ambassador")) {
-      window.location.href = getAssetPath("/ambassadors");
-    } else if (query.includes("get involved") || query.includes("involved")) {
-      window.location.href = getAssetPath("/get-involved");
-    } else if (query.includes("roundtable") || query.includes("workshop")) {
-      window.location.href = getAssetPath("/roundtables-workshops");
-    } else if (query.includes("launchpad")) {
-      window.location.href = getAssetPath("/fintech-launchpad");
-    } else if (query.includes("enquiry") || query.includes("contact")) {
-      window.location.href = getAssetPath("/general-enquiry");
-    } else {
-      window.location.href = `/speakers?search=${encodeURIComponent(query)}`;
-    }
+    handleSelectResult(`/speakers/?search=${encodeURIComponent(query)}`);
   };
 
   useEffect(() => {
+    // Handle initial hash scroll if arriving with section anchor
+    if (window.location.hash) {
+      const elementId = window.location.hash.replace("#", "");
+      setTimeout(() => {
+        const elem = document.getElementById(elementId);
+        if (elem) {
+          elem.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 250);
+    }
+
     const handleScroll = () => {
       // Background transition trigger
       if (window.scrollY > 50) {
@@ -146,19 +171,40 @@ export default function Navbar() {
     { name: "Ecosystem", href: getAssetPath("/sponsors"), hasMega: true, megaId: "ecosystem" },
   ];
 
-  const handleScrollToSection = (id: string) => {
+  const handleScrollToSection = (targetUrl: string) => {
     setActiveMegaMenu(null);
     setMobileMenuOpen(false);
-    if (id.startsWith("/")) {
-      window.location.href = id;
+
+    const homePath = getAssetPath("/");
+    const cleanHome = homePath.replace(/\/$/, "");
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+
+    const finalUrl = getAssetPath(targetUrl);
+
+    // If navigating to Home page
+    if (targetUrl === "/" || targetUrl === homePath || finalUrl === homePath || finalUrl === cleanHome || finalUrl === cleanHome + "/") {
+      if (currentPath === cleanHome || currentPath === "" || currentPath === "/dfs-version-2") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        window.location.href = homePath;
+      }
       return;
     }
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = "/" + id;
+
+    if (targetUrl.includes("#")) {
+      const [pagePath, elementId] = targetUrl.split("#");
+      const targetPath = getAssetPath(pagePath || "/").replace(/\/$/, "");
+
+      if (currentPath === targetPath || currentPath === targetPath.replace(/\/dfs-version-2$/, "")) {
+        const elem = document.getElementById(elementId);
+        if (elem) {
+          elem.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+      }
     }
+
+    window.location.href = finalUrl;
   };
 
   const speakersMega = {
@@ -190,7 +236,7 @@ export default function Navbar() {
   const getInvolvedMega = {
     title: "Participation Hub",
     subtitle: "Engage with global financial technology builders and investors.",
-    image: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
+    image: getAssetPath("/images/dfs_mega_get_involved.jpg"),
     links: [
       {
         title: "Buy Tickets",
@@ -312,12 +358,18 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a
-            href="/"
-            className="flex items-center space-x-3 focus:outline-none"
+            href={getAssetPath("/")}
+            className="flex items-center space-x-3 focus:outline-none cursor-pointer"
             onClick={(e) => {
-              if (window.location.pathname === "/") {
-                e.preventDefault();
+              e.preventDefault();
+              const homePath = getAssetPath("/");
+              const currentPath = window.location.pathname.replace(/\/$/, "");
+              const cleanHomePath = homePath.replace(/\/$/, "");
+
+              if (currentPath === cleanHomePath || currentPath === "" || currentPath === "/dfs-version-2") {
                 window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = homePath;
               }
             }}
           >
@@ -402,14 +454,7 @@ export default function Navbar() {
               <Search className="w-4 h-4" />
             </button>
 
-            {/* Language Switcher */}
-            <button
-              className="flex items-center space-x-1.5 text-sm font-semibold nav-icon-dynamic transition-colors"
-              onClick={() => alert("Arabic localized interface is coming soon!")}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>EN</span>
-            </button>
+
 
             {/* Enquire Now Ghost CTA */}
             <button
@@ -553,25 +598,6 @@ export default function Navbar() {
                       fill
                       className="object-cover transition-transform duration-700 ease-out group-hover/img:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent flex items-end p-4">
-                      <div className="text-left">
-                        <span className="text-[9px] font-mono font-bold tracking-widest text-[#12e8e8] uppercase block">
-                          {
-                            activeMegaMenu === "speakers" 
-                              ? speakersMega.title 
-                              : activeMegaMenu === "get-involved" 
-                              ? getInvolvedMega.title 
-                              : activeMegaMenu === "about"
-                              ? aboutMega.title
-                              : ecosystemMega.title
-                          }
-                        </span>
-                        <span className="text-xs font-bold text-white flex items-center space-x-1.5 mt-0.5 group-hover/img:text-[#12e8e8] transition-colors">
-                          <span>EXPLORE SECTION</span>
-                          <ArrowRight className="w-3 h-3" />
-                        </span>
-                      </div>
-                    </div>
                   </a>
                 </div>
               </div>
@@ -583,74 +609,84 @@ export default function Navbar() {
       {/* Global Interactive Search Dropdown */}
       <AnimatePresence>
         {searchOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-[85px] left-0 right-0 z-[100] max-w-2xl mx-auto px-6"
-          >
-            <div className="flex flex-col w-full bg-white border border-slate-200/80 shadow-2xl rounded-2xl overflow-hidden mt-2">
-              <form 
-                onSubmit={handleSearchSubmit}
-                className="p-4 flex items-center space-x-3 w-full border-b border-slate-100 bg-white"
-              >
-                <Search className="w-5 h-5 text-slate-400 shrink-0" />
-                <input
-                  type="text"
-                  value={searchVal}
-                  onChange={(e) => setSearchVal(e.target.value)}
-                  placeholder="Search speakers, topics, or venues..."
-                  className="w-full bg-transparent border-none text-slate-800 placeholder-slate-400 text-sm focus:outline-none"
-                  autoFocus
-                />
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSearchOpen(false);
-                    setSearchVal("");
-                  }}
-                  className="text-xs font-mono font-bold uppercase tracking-wider text-[#0f766e] hover:text-slate-900 shrink-0"
-                >
-                  Close
-                </button>
-              </form>
+          <>
+            {/* Backdrop Mask for Click-to-Close */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => {
+                setSearchOpen(false);
+                setSearchVal("");
+              }}
+              className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[98] cursor-pointer"
+            />
 
-              {/* Dynamic Search Results Panel */}
-              {searchVal.trim() && (
-                <div className="max-h-[320px] overflow-y-auto divide-y divide-slate-100 p-2 bg-slate-50">
-                  {searchResults.length === 0 ? (
-                    <div className="p-6 text-center text-slate-400 text-xs font-mono">
-                      No results matched "{searchVal}"
-                    </div>
-                  ) : (
-                    searchResults.map((res, index) => (
-                      <a
-                        key={index}
-                        href={res.href}
-                        onClick={() => {
-                          setSearchOpen(false);
-                          setSearchVal("");
-                        }}
-                        className="flex flex-col p-3 hover:bg-white rounded-xl transition-all text-left space-y-1 group"
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-mono font-bold uppercase text-[#0f766e] tracking-wider">
-                            {res.title}
-                          </span>
-                          <span className="text-[10px] text-slate-400 group-hover:text-[#0f766e] transition-colors">
-                            Navigate ↗
-                          </span>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed top-[85px] left-0 right-0 z-[100] max-w-2xl mx-auto px-6"
+            >
+              <div className="flex flex-col w-full bg-white border border-slate-200 shadow-2xl rounded-2xl overflow-hidden mt-2">
+                <form 
+                  onSubmit={handleSearchSubmit}
+                  className="p-4 flex items-center space-x-3 w-full border-b border-slate-100 bg-white"
+                >
+                  <Search className="w-5 h-5 text-slate-400 shrink-0" />
+                  <input
+                    type="text"
+                    value={searchVal}
+                    onChange={(e) => setSearchVal(e.target.value)}
+                    placeholder="Search any page, heading, speaker, or section..."
+                    className="w-full bg-transparent border-none text-slate-800 placeholder-slate-400 text-sm focus:outline-none"
+                    autoFocus
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchOpen(false);
+                      setSearchVal("");
+                    }}
+                    className="text-xs font-mono font-bold uppercase tracking-wider text-[#0f766e] hover:text-slate-900 shrink-0 px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                  >
+                    Esc
+                  </button>
+                </form>
+
+                {/* Dynamic Search Results Panel */}
+                {searchVal.trim() && (
+                  <div className="max-h-[420px] overflow-y-auto divide-y divide-slate-100 p-2 bg-slate-50">
+                    {searchResults.length === 0 ? (
+                      <div className="p-6 text-center text-slate-400 text-xs font-mono">
+                        No results matched "{searchVal}"
+                      </div>
+                    ) : (
+                      searchResults.map((res, index) => (
+                        <div
+                          key={index}
+                          onClick={() => handleSelectResult(res.href)}
+                          className="flex flex-col p-3.5 hover:bg-white rounded-xl transition-all text-left space-y-1 group cursor-pointer shadow-none hover:shadow-sm"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-mono font-bold uppercase text-[#0f766e] tracking-wider">
+                              {res.title}
+                            </span>
+                            <span className="text-[10px] font-bold text-slate-400 group-hover:text-[#0f766e] transition-colors">
+                              Go to Section ↗
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-medium">
+                            {res.snippet}
+                          </p>
                         </div>
-                        <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                          {res.snippet}
-                        </p>
-                      </a>
-                    ))
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
+                      ))
+                    )}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 

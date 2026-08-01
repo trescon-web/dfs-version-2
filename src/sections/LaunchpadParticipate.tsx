@@ -35,7 +35,7 @@ export default function LaunchpadParticipate() {
       {/* Dynamic CSS overrides for custom card backdrops */}
       <style dangerouslySetInnerHTML={{__html: `
         .launchpad-card-bg {
-          background-image: linear-gradient(rgba(8, 32, 40, 0.85), rgba(8, 32, 40, 0.85)), url('${getAssetPath("/images/dfs_strategic_networking_custom_clean.jpg")}') !important;
+          background-image: linear-gradient(rgba(8, 32, 40, 0.85), rgba(8, 32, 40, 0.85)), url('${getAssetPath("/images/dfs_networking_hall.jpg")}') !important;
           background-position: center bottom !important;
           background-size: cover !important;
           border: 1px solid rgba(18, 232, 232, 0.15) !important;
@@ -52,7 +52,7 @@ export default function LaunchpadParticipate() {
         {/* Header split section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-8 border-b border-slate-700/50">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight">
               Why participate?
             </h2>
             <p className="text-[#12e8e8] text-[16px] md:text-[18px] font-sans font-bold tracking-wide">
@@ -102,3 +102,4 @@ export default function LaunchpadParticipate() {
     </section>
   );
 }
+

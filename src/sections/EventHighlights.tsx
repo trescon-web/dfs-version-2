@@ -55,7 +55,7 @@ export default function EventHighlights() {
       tag: "03 / FUNDING",
       title: "Investor Matchmaking",
       desc: "Exclusive networking lounges linking 1,000+ venture capital funds with high-growth startup ecosystems.",
-      img: getAssetPath("/images/dfs_female_executive_custom.jpg"),
+      img: getAssetPath("/images/dfs_panel_discussion_v2.jpg"),
     },
     {
       icon: Sparkles,
@@ -79,7 +79,7 @@ export default function EventHighlights() {
               <span>SUMMIT HIGHLIGHTS</span>
             </div>
             {/* Added line height and padding to prevent webkit gradient clip */}
-            <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white leading-tight py-1 inline-block">
+            <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white leading-tight py-1 inline-block">
               Unveiling the future of global finance
             </h2>
             <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -161,3 +161,4 @@ export default function EventHighlights() {
     </section>
   );
 }
+

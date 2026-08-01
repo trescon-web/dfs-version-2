@@ -53,7 +53,7 @@ export default function MediaCoverage() {
             <Newspaper className="w-3.5 h-3.5" />
             <span>GLOBAL PRESS</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
             Media coverage
           </h2>
           <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -105,3 +105,4 @@ export default function MediaCoverage() {
     </section>
   );
 }
+

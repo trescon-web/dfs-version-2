@@ -74,19 +74,19 @@ export default function EnquiryForm() {
         }
       `}} />
 
-      <div className="max-w-3xl mx-auto px-6 relative z-10 w-full">
+      <div className="w-[95%] md:w-[80%] max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <AnimatePresence mode="wait">
           {!submitted ? (
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
-              className="p-8 md:p-10 rounded-3xl backdrop-blur-xl bg-[#081824]/40 border border-white/5 shadow-2xl relative overflow-hidden text-left"
+              className="p-8 md:p-16 rounded-3xl backdrop-blur-xl bg-[#081824]/40 border border-white/5 shadow-2xl relative overflow-hidden text-left"
             >
               {/* Card Hover Glow effect */}
               <div className="absolute -inset-px bg-gradient-to-br from-transparent via-transparent to-[#12e8e8]/5 rounded-3xl pointer-events-none" />
 
-              <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form onSubmit={handleSubmit} className="space-y-12 md:space-y-16 relative z-10">
                 
                 {/* 1. Enquiry Type Options */}
                 <div className="space-y-3">
@@ -114,7 +114,7 @@ export default function EnquiryForm() {
                 </div>
 
                 {/* 2. Personal Grid Info */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-16">
                   {/* First Name */}
                   <div className="space-y-2">
                     <span className="enq-label block">First Name *</span>
@@ -141,7 +141,7 @@ export default function EnquiryForm() {
                 </div>
 
                 {/* 3. Contact Grid Info */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-16">
                   {/* Business Email */}
                   <div className="space-y-2">
                     <span className="enq-label block">Business Email *</span>
@@ -168,7 +168,7 @@ export default function EnquiryForm() {
                 </div>
 
                 {/* 4. Company Grid Info */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-16">
                   {/* Job Title */}
                   <div className="space-y-2">
                     <span className="enq-label block">Job Title</span>

@@ -55,7 +55,7 @@ export default function GetInvolvedSponsor() {
           <span className="text-xs font-mono font-bold tracking-widest text-[#0b766e] uppercase block">
             PARTNERSHIP OPPORTUNITIES
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight sponsor-sec-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight sponsor-sec-title">
             Explore Sponsorship Opportunities
           </h2>
           <p className="text-sm md:text-base leading-relaxed sponsor-sec-desc max-w-2xl mx-auto font-medium">
@@ -106,3 +106,4 @@ export default function GetInvolvedSponsor() {
     </section>
   );
 }
+

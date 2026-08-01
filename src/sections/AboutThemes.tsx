@@ -93,7 +93,7 @@ export default function AboutThemes() {
         
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-2xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight theme-section-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight theme-section-title">
             Strategic themes
           </h2>
         </div>
@@ -138,3 +138,4 @@ export default function AboutThemes() {
     </section>
   );
 }
+

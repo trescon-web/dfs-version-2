@@ -16,7 +16,7 @@ export default function DFFWThemeVision() {
         {/* Header Block */}
         <div className="text-left flex items-center space-x-3">
           <span className="text-[#12e8e8] text-3xl md:text-5xl font-black">/</span>
-          <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-[800] text-white tracking-tight">
             Finance Reimagined
           </h2>
         </div>
@@ -42,7 +42,7 @@ export default function DFFWThemeVision() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl font-black text-white">
+              <h3 className="text-2xl font-[800] text-white">
                 Theme
               </h3>
               <p className="text-sm md:text-base leading-relaxed text-slate-350 font-medium">
@@ -69,7 +69,7 @@ export default function DFFWThemeVision() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl font-black text-white">
+              <h3 className="text-2xl font-[800] text-white">
                 Vision
               </h3>
               <p className="text-sm md:text-base leading-relaxed text-slate-350 font-medium">
@@ -84,3 +84,4 @@ export default function DFFWThemeVision() {
     </section>
   );
 }
+

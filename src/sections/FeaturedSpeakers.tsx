@@ -153,7 +153,12 @@ export default function FeaturedSpeakers() {
   };
 
   return (
-    <section id="headliners" className="headliners-section" aria-label="Summit Speakers">
+    <section 
+      id="headliners" 
+      className="headliners-section" 
+      aria-label="Summit Speakers"
+      style={{ backgroundImage: `url(${getAssetPath('/assets/curated-bg.png')})` }}
+    >
       
       <div className="section-container">
         

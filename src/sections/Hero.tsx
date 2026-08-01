@@ -152,13 +152,13 @@ export default function Hero() {
   };
 
   const lineVars = {
-    initial: { y: 60, opacity: 0 },
+    initial: { y: 0, opacity: 1 },
     animate: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 1,
-        ease: [0.16, 1, 0.3, 1] as any, // easeOutExpo
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1] as any,
       },
     },
   };
@@ -166,7 +166,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between pt-36 pb-16 overflow-hidden bg-midnight">
       
-      {/* 1. Official Ambient Background Video - 100% Clear Opacity */}
+      {/* 1. Official Ambient Background Video */}
       <video
         autoPlay
         loop
@@ -177,11 +177,11 @@ export default function Hero() {
         <source src={getAssetPath("/videos/dfs-hero-video.mp4")} type="video/mp4" />
       </video>
 
-      {/* 3. Official Brand Floating Diamonds (Parallax/UX Depth) */}
-      <div className="absolute left-[-5%] top-[35%] w-48 h-48 opacity-10 pointer-events-none hidden lg:block z-10 select-none animate-spin" style={{ animationDuration: "120s" }}>
+      {/* 3. Official Brand Floating Diamonds */}
+      <div className="absolute left-[-5%] top-[35%] w-48 h-48 opacity-10 pointer-events-none hidden lg:block z-10 select-none animate-spin" style={{ animationDuration: '120s' }}>
         <DFSDiamond className="text-electric-turquoise" />
       </div>
-      <div className="absolute right-[-5%] top-[25%] w-48 h-48 opacity-10 pointer-events-none hidden lg:block z-10 select-none animate-spin" style={{ animationDuration: "90s" }}>
+      <div className="absolute right-[-5%] top-[25%] w-48 h-48 opacity-10 pointer-events-none hidden lg:block z-10 select-none animate-spin" style={{ animationDuration: '90s' }}>
         <DFSDiamond className="text-electric-turquoise" />
       </div>
 
@@ -189,38 +189,34 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 w-full text-center relative z-20 my-auto flex flex-col items-center">
 
         <motion.h1
-          variants={containerVars}
-          initial="initial"
+          initial={false}
           animate="animate"
           className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-[-0.04em] leading-[0.85] max-w-6xl flex flex-col items-center select-none"
         >
           <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVars} className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
+            <span className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
               Connecting
-            </motion.span>
+            </span>
           </span>
           <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVars} className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
+            <span className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
               markets
-            </motion.span>
+            </span>
           </span>
           <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVars} className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
+            <span className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
               transforming
-            </motion.span>
+            </span>
           </span>
           <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVars} className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
+            <span className="block font-sans font-bold shimmer-text hover:scale-[1.02] transition-transform duration-300 cursor-default">
               economies
-            </motion.span>
+            </span>
           </span>
         </motion.h1>
 
-        {/* Redesigned Integrated Monospace Metadata Band (Date & Location) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        {/* Date & Location Band */}
+        <div
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-base md:text-lg font-mono tracking-widest"
         >
           <span className="font-bold flex items-center shrink-0 text-white" style={{ color: "#ffffff" }}>
@@ -232,31 +228,29 @@ export default function Hero() {
             <MapPin className="w-5 h-5 mr-2.5 shrink-0 text-white" style={{ color: "#ffffff", stroke: "#ffffff" }} />
             <span style={{ color: "#ffffff" }}>Madinat Jumeirah, Dubai, UAE</span>
           </span>
-        </motion.div>
+        </div>
 
-        {/* Luxury CTA Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        {/* CTA Actions */}
+        <div
           className="flex flex-col sm:flex-row items-center gap-5 pt-8 z-20 relative"
         >
           <button
             onClick={() => {
-              const agendaSection = document.querySelector("#agenda");
-              if (agendaSection) agendaSection.scrollIntoView({ behavior: "smooth" });
+              const el = document.getElementById("buy-tickets");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+              else window.location.href = getAssetPath("/get-involved/#buy-tickets");
             }}
             className="btn-unified"
           >
             Buy a Pass
           </button>
           <button
-            onClick={() => alert("Registration enquiry form initialized. Check your chat dashboard.")}
+            onClick={() => window.location.href = getAssetPath("/general-enquiry")}
             className="btn-unified-outline"
           >
             Enquire Now
           </button>
-        </motion.div>
+        </div>
       </div>
 
       {/* Footer Organizer Details (Bottom of Hero) */}

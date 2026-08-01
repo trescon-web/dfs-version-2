@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
+/* Hide Next.js Dev Badge / Indicator */
+nextjs-portal,
+[data-nextjs-toast],
+#nextjs-dev-tools,
+div[class*="next-dev-tools"] {
+  display: none !important;
+}
+
 /* -------------------------------------------------------------
    Lufga Font Family Loader (Static Assets)
    Files should be placed inside the /public/fonts/ directory
 ------------------------------------------------------------- */
 @font-face {
   font-family: 'Lufga';
-  src: url('/fonts/Lufga-Regular.woff2') format('woff2');
+  src: url('../../public/fonts/Lufga-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -14,7 +22,7 @@
 
 @font-face {
   font-family: 'Lufga';
-  src: url('/fonts/Lufga-Regular.woff2') format('woff2');
+  src: url('../../public/fonts/Lufga-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -22,7 +30,7 @@
 
 @font-face {
   font-family: 'Lufga';
-  src: url('/fonts/Lufga-Bold.woff2') format('woff2');
+  src: url('../../public/fonts/Lufga-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -30,7 +38,7 @@
 
 @font-face {
   font-family: 'Lufga';
-  src: url('/fonts/Lufga-Bold.woff2') format('woff2');
+  src: url('../../public/fonts/Lufga-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -38,7 +46,7 @@
 
 @font-face {
   font-family: 'Lufga';
-  src: url('/fonts/Lufga-Bold.woff2') format('woff2');
+  src: url('../../public/fonts/Lufga-Bold.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -445,11 +453,11 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
 
 /* Buy a Pass button dynamic */
 .nav-btn-buy {
-  background-color: #12e8e8 !important;
+  background-color: #12e9e9 !important;
   color: #082028 !important;
   border-radius: 9999px !important; /* rounded-full */
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  border: 1px solid transparent !important;
+  border: 1.5px solid #12e9e9 !important;
   cursor: pointer !important;
 }
 .nav-btn-buy:hover {
@@ -458,7 +466,7 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
   transform: translateY(-1px) !important;
 }
 .scrolled .nav-btn-buy {
-  background-color: #12e8e8 !important;
+  background-color: #12e9e9 !important;
   color: #082028 !important;
 }
 .scrolled .nav-btn-buy:hover {
@@ -675,7 +683,6 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
 .headliners-section {
   padding: 3.5rem 0;
   background-color: #ffffff;
-  background-image: url('/assets/curated-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1421,4 +1428,47 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
   .join-network-title {
     font-size: 2rem;
   }
+}
+
+/* ==========================================================================
+   STICKY BOTTOM BANNER — FORCED WHITE THEME (overrides all global rules)
+   ========================================================================== */
+#global-sticky-bottom-banner {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-top: 3px solid #12e8e8 !important;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15) !important;
+  filter: none !important;
+}
+
+#global-sticky-bottom-banner *:not(svg):not(svg *) {
+  filter: none !important;
+}
+
+#global-sticky-bottom-banner h4 {
+  color: #0f172a !important;
+}
+
+#global-sticky-bottom-banner p {
+  color: #475569 !important;
+}
+
+#global-sticky-bottom-banner .text-white,
+#global-sticky-bottom-banner .text-white\/90,
+#global-sticky-bottom-banner .text-white\/80,
+#global-sticky-bottom-banner .text-white\/70 {
+  color: #0f172a !important;
+}
+
+#global-sticky-bottom-banner button {
+  background-color: transparent !important;
+  color: #64748b !important;
+}
+
+#global-sticky-bottom-banner button:hover {
+  color: #0f172a !important;
+}
+
+#global-sticky-bottom-banner svg path {
+  fill: currentColor !important;
 }

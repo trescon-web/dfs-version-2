@@ -45,7 +45,7 @@ export default function Newsletter() {
           <span>INTEL BROADCAST</span>
         </div>
         
-        <h2 className="text-3xl md:text-5xl font-black tracking-[-0.03em] text-slate-900 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-[800] tracking-[-0.03em] text-slate-900 leading-tight">
           Subscribe to summit updates
         </h2>
         
@@ -79,3 +79,4 @@ export default function Newsletter() {
     </section>
   );
 }
+

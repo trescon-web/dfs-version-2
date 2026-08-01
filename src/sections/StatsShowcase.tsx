@@ -69,7 +69,7 @@ export default function StatsShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
               02 // Core Metrics
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
               The Epicenter of Financial Momentum
             </h2>
           </div>
@@ -304,3 +304,4 @@ export default function StatsShowcase() {
     </section>
   );
 }
+

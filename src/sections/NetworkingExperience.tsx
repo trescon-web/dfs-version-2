@@ -22,28 +22,28 @@ export default function NetworkingExperience() {
   const experiences = [
     {
       title: "VVIP Welcome Reception",
-      tag: "01 // NETWORKING",
+      tag: "NETWORKING",
       desc: "An exclusive evening under the stars for advisory board members, ministers, and key corporate delegates.",
       meta: "02 November // 19:30",
       img: getAssetPath("/images/dfs_networking_hall.jpg"),
     },
     {
       title: "VC Speed Dating Lounges",
-      tag: "02 // MATCHMAKING",
+      tag: "MATCHMAKING",
       desc: "One-on-one matchmaking sessions connecting early and growth-stage companies with active venture funds.",
       meta: "02-03 November // All Day",
-      img: getAssetPath("/images/dfs_female_executive_custom.jpg"),
+      img: getAssetPath("/images/dfs_panel_discussion_v2.jpg"),
     },
     {
       title: "Advisory Board Luncheons",
-      tag: "03 // COLLABORATION",
+      tag: "COLLABORATION",
       desc: "Closed-door policy sessions establishing standard blueprints for cognitive models and global compliance ledgers.",
       meta: "03 November // 12:30",
       img: getAssetPath("/images/dfs_nasdaq_keynote.jpg"),
     },
     {
       title: "Fintech Excellence Awards",
-      tag: "04 // CELEBRATION",
+      tag: "CELEBRATION",
       desc: "A gala dinner celebrating disruptive tech architectures and the builders laying international rails.",
       meta: "03 November // 20:00",
       img: getAssetPath("/images/dfs_visa_exhibition_booth.jpg"),
@@ -62,7 +62,7 @@ export default function NetworkingExperience() {
               <GlassWater className="w-3.5 h-3.5" />
               <span>SPATIAL CONVENING</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+            <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
               The networking experience
             </h2>
             <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -149,3 +149,4 @@ export default function NetworkingExperience() {
     </section>
   );
 }
+

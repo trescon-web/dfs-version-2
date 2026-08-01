@@ -23,7 +23,7 @@ export default function InvestorLounge() {
                 <Handshake className="w-3.5 h-3.5" />
                 <span>VENTURE CAPITAL DECK</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white leading-tight">
+              <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white leading-tight">
                 Venture Capital Investor Lounge
               </h2>
               <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -89,3 +89,4 @@ export default function InvestorLounge() {
     </section>
   );
 }
+

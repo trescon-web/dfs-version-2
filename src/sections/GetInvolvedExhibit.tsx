@@ -41,7 +41,7 @@ export default function GetInvolvedExhibit() {
       badge: "START-UP POD",
       title: "Start-up Pod",
       price: "USD 3,000",
-      image: getAssetPath("/images/stage-innovation.webp"),
+      image: getAssetPath("/images/stage-innovation.png"),
       buttonText: "Buy now",
       note: "*Price includes cost of Start-up Pod Package and a pre-built exhibition pod.",
       benefits: [
@@ -115,7 +115,7 @@ export default function GetInvolvedExhibit() {
           <span className="text-xs font-mono font-bold tracking-widest text-[#0b766e] uppercase block">
             EXHIBITION STANDS
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight exhibit-title">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight leading-tight exhibit-title">
             Exhibition Packages
           </h2>
           <p className="text-sm md:text-base leading-relaxed exhibit-desc max-w-xl mx-auto font-medium">
@@ -125,18 +125,18 @@ export default function GetInvolvedExhibit() {
 
         {/* Dynamic Tab Switchers */}
         <div className="flex justify-center">
-          <div className="flex space-x-2 bg-[#082028] p-1.5 rounded-2xl border border-slate-800 shadow-xl">
+          <div className="flex bg-slate-50 p-1.5 rounded-full border border-[#082028] shadow-sm">
             {packages.map((pkg) => (
               <button
                 key={pkg.id}
                 onClick={() => setActiveTab(pkg.id)}
-                className={`px-8 py-3.5 text-xs md:text-sm font-black uppercase tracking-wider rounded-xl transition-all duration-300 relative ${
+                className={`px-8 md:px-10 py-3.5 text-xs md:text-sm font-black uppercase tracking-wider rounded-full transition-all duration-300 relative ${
                   activeTab === pkg.id
-                    ? "bg-[#12e8e8] text-[#082028] shadow-lg shadow-[#12e8e8]/20 scale-[1.02]"
-                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                    ? "bg-[#12e8e8] text-[#082028] shadow-sm"
+                    : "text-[#082028]/50 hover:text-[#082028] hover:bg-[#082028]/5"
                 }`}
               >
-                {pkg.title}
+                {pkg.badge}
               </button>
             ))}
           </div>
@@ -189,7 +189,7 @@ export default function GetInvolvedExhibit() {
                     </div>
 
                     {/* Footnote */}
-                    <p className="text-[10px] leading-relaxed text-left pkg-note px-1">
+                    <p className="text-xs leading-relaxed text-left pkg-note px-1">
                       {pkg.note}
                     </p>
                   </div>
@@ -197,7 +197,7 @@ export default function GetInvolvedExhibit() {
                   {/* Right Side: Package Benefits Details */}
                   <div className="lg:col-span-7 space-y-8 text-left py-2">
                     <div className="space-y-2 border-b border-slate-100 pb-4">
-                      <h3 className="text-3xl font-black tracking-tight pkg-title">
+                      <h3 className="text-3xl font-[800] tracking-tight pkg-title">
                         {pkg.title}
                       </h3>
                       <span className="text-[10.5px] font-mono font-bold tracking-widest text-slate-400 uppercase block">
@@ -246,3 +246,4 @@ export default function GetInvolvedExhibit() {
     </section>
   );
 }
+

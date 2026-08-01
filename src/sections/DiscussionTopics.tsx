@@ -141,7 +141,7 @@ export default function DiscussionTopics() {
             <div className="inline-flex items-center space-x-2 bg-[#082028]/5 border border-[#082028]/10 px-3.5 py-1.5 rounded-full text-[#082028] text-xs font-mono font-bold tracking-widest uppercase">
               <span>SUMMIT TAXONOMY</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black tracking-[-0.03em] leading-tight" style={{ color: "#082028" }}>
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-[-0.03em] leading-tight" style={{ color: "#082028" }}>
               Discussion topics
             </h2>
           </div>
@@ -215,3 +215,4 @@ export default function DiscussionTopics() {
     </section>
   );
 }
+

@@ -50,7 +50,7 @@ export default function Testimonials() {
             <MessageSquare className="w-3.5 h-3.5" />
             <span>EXECUTIVE FEEDBACK</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
             Industry endorsement
           </h2>
         </div>
@@ -106,3 +106,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

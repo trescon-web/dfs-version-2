@@ -12,43 +12,43 @@ export default function Exhibition() {
     { 
       src: getAssetPath("/images/exhibit/exhibit-1.png"), 
       alt: "Deal Flow Chambers",
-      label: "01 // DEAL FLOW CHAMBERS",
+      label: "DEAL FLOW CHAMBERS",
       caption: "High-value deal lounges connecting sovereign allocators with global enterprise founders."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-2.png"), 
       alt: "Brand Showcase Arena",
-      label: "02 // BRAND SHOWCASE ARENA",
+      label: "BRAND SHOWCASE ARENA",
       caption: "Over 200+ global brands and startup booths exhibiting live transactional platforms."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-3.png"), 
       alt: "Strategic Syndicate Stages",
-      label: "03 // STRATEGIC SYNDICATE STAGES",
+      label: "STRATEGIC SYNDICATE STAGES",
       caption: "Titans of fintech and central bankers aligning policies and regulatory licensing."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-4.png"), 
       alt: "Spatial Networking Hubs",
-      label: "04 // SPATIAL NETWORKING HUBS",
+      label: "SPATIAL NETWORKING HUBS",
       caption: "Closed-door networking halls driving corridor conversations and cross-border trade bridges."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-5.png"), 
       alt: "Global Innovation Pavilion",
-      label: "05 // GLOBAL INNOVATION PAVILION",
+      label: "GLOBAL INNOVATION PAVILION",
       caption: "Cutting-edge web3, AI, and digital payment demonstrations from international tech hubs."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-6.png"), 
       alt: "Investor Syndicate Lounges",
-      label: "06 // INVESTOR SYNDICATE LOUNGES",
+      label: "INVESTOR SYNDICATE LOUNGES",
       caption: "Exclusive matchmaking chambers connecting seed to Series C fintech pioneers with tier-1 VCs."
     },
     { 
       src: getAssetPath("/images/exhibit/exhibit-7.png"), 
       alt: "Future Finance Expo Arena",
-      label: "07 // FUTURE FINANCE EXPO ARENA",
+      label: "FUTURE FINANCE EXPO ARENA",
       caption: "World-class exhibition floor hosting multi-trillion dollar asset managers and banking leaders."
     },
   ];
@@ -76,7 +76,7 @@ export default function Exhibition() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeIdx}
-          initial={{ opacity: 0, scale: 1.04 }}
+          initial={{ opacity: 1, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -109,7 +109,7 @@ export default function Exhibition() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight" style={{ color: "#082028" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-[800] tracking-tight leading-tight" style={{ color: "#082028" }}>
             Exhibit. Network. <span style={{ color: "#12e8e8" }}>Grow.</span>
           </h2>
 
@@ -136,3 +136,4 @@ export default function Exhibition() {
     </section>
   );
 }
+

@@ -58,7 +58,7 @@ export default function Pricing() {
             <Ticket className="w-3.5 h-3.5" />
             <span>REGISTRATION PASSES</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em] text-gradient-white">
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em] text-gradient-white">
             Secure your seat at the summit
           </h2>
           <p className="text-base text-white/60 leading-relaxed font-medium">
@@ -92,7 +92,7 @@ export default function Pricing() {
                   <span className="font-mono text-[9px] tracking-widest text-[#c5a880] font-bold uppercase">
                     {pass.tag}
                   </span>
-                  <h3 className="text-2xl font-black text-white mt-1">
+                  <h3 className="text-2xl font-[800] text-white mt-1">
                     {pass.name}
                   </h3>
                 </div>
@@ -133,3 +133,4 @@ export default function Pricing() {
     </section>
   );
 }
+

@@ -43,7 +43,7 @@ export default function AssociationsWhyAssociate() {
             transition={{ duration: 0.8 }}
             className="space-y-8 order-1 lg:order-2"
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#082028] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-[#082028] leading-tight">
               Why associate with DFS
             </h2>
             
@@ -76,7 +76,7 @@ export default function AssociationsWhyAssociate() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="w-full text-center space-y-8 pt-10 border-t border-slate-200/50"
         >
-          <h3 className="text-xl md:text-2xl font-black text-[#082028] tracking-tight leading-relaxed max-w-3xl mx-auto">
+          <h3 className="text-xl md:text-2xl font-[800] text-[#082028] tracking-tight leading-relaxed max-w-3xl mx-auto">
             Showcase your ecosystem on the world’s most influential FinTech stage.
           </h3>
           
@@ -94,3 +94,4 @@ export default function AssociationsWhyAssociate() {
     </section>
   );
 }
+

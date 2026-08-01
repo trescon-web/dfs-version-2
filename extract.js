@@ -1,0 +1,1 @@
+const fs = require('fs'); const content = fs.readFileSync('C:/Users/Nazim/.gemini/antigravity/brain/9034ca3f-b313-430d-b8f7-ee07969a4f2b/.system_generated/steps/11054/content.md', 'utf8'); const regex = /https?:\/\/[^\s\"\'\)]+\.(?:jpg|jpeg|png|webp)/g; const matches = [...new Set(content.match(regex))]; console.log(matches.join('\n'));

@@ -96,7 +96,7 @@ async function approveSandboxAssets(startupId) {
             <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
               09 // Innovation Lab
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
               Real-world Fintech Sandbox Case Studies
             </h2>
             <p className="text-sm md:text-base text-foreground/60 mt-4 leading-relaxed">
@@ -229,3 +229,4 @@ async function approveSandboxAssets(startupId) {
     </section>
   );
 }
+

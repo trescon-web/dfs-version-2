@@ -22,7 +22,7 @@ export default function AssociationsPartnershipBlock() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#082028] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-[#082028] leading-tight">
               Association partnerships
             </h2>
             
@@ -61,3 +61,4 @@ export default function AssociationsPartnershipBlock() {
     </section>
   );
 }
+

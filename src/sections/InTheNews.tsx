@@ -14,9 +14,9 @@ export default function InTheNews() {
       category: "CNBC SPECIAL COVERAGE",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-1.svg")} 
+          src={getAssetPath("/images/news_cnbc.png")} 
           alt="CNBC Logo" 
-          className="h-auto w-[40%] object-contain" 
+          className="h-8 md:h-10 w-auto max-w-[160px] object-contain object-left" 
         />
       ),
     },
@@ -25,9 +25,9 @@ export default function InTheNews() {
       category: "KHALEEJ TIMES HEADLINE",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-2.png")} 
+          src={getAssetPath("/images/news_khaleej_times.png")} 
           alt="Khaleej Times Logo" 
-          className="h-auto w-[50%] object-contain" 
+          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
         />
       ),
     },
@@ -39,9 +39,9 @@ export default function InTheNews() {
       category: "THE FINTECH TIMES SPECIAL",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-4.png")} 
+          src={getAssetPath("/images/news_fintech_times.png")} 
           alt="The Fintech Times Logo" 
-          className="h-auto w-[59%] object-contain" 
+          className="h-8 md:h-10 w-auto max-w-[180px] object-contain object-left" 
         />
       ),
     },
@@ -50,9 +50,9 @@ export default function InTheNews() {
       category: "GULF NEWS FEATURE",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-5.svg")} 
+          src={getAssetPath("/images/news_gulf_news.png")} 
           alt="Gulf News Logo" 
-          className="h-6 w-auto object-contain" 
+          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
         />
       ),
     },
@@ -64,9 +64,9 @@ export default function InTheNews() {
       category: "ENTREPRENEUR PROFILE",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-3.jpg")} 
+          src={getAssetPath("/images/news_entrepreneur.png")} 
           alt="Entrepreneur Middle East Logo" 
-          className="h-auto w-[40%] object-contain" 
+          className="h-10 md:h-14 w-auto max-w-[210px] object-contain object-left" 
         />
       ),
     },
@@ -75,9 +75,9 @@ export default function InTheNews() {
       category: "ECONOMIC TIMES ANALYTICS",
       logo: (
         <img 
-          src={getAssetPath("/images/logo-6.png")} 
+          src={getAssetPath("/images/news_economic_times.png")} 
           alt="The Economic Times Logo" 
-          className="h-9 w-auto object-contain" 
+          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
         />
       ),
     },
@@ -145,7 +145,7 @@ export default function InTheNews() {
             <span className="inline-block text-[9px] font-mono font-bold tracking-widest text-[#0b766e] uppercase">
               PRESS VALIDATION
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-[-0.03em]" style={{ color: "#082028" }}>
+            <h2 className="text-4xl md:text-5xl font-[800] tracking-[-0.03em]" style={{ color: "#082028" }}>
               In the news
             </h2>
           </div>
@@ -171,7 +171,7 @@ export default function InTheNews() {
             {allNews.map((item, idx) => (
               <div
                 key={idx}
-                className="snap-center shrink-0 w-[85vw] max-w-[340px] bg-white border-2 border-slate-200/90 rounded-[24px] p-6 flex flex-col justify-between space-y-5 shadow-sm transition-all"
+                className="snap-center shrink-0 w-[85vw] max-w-[340px] bg-white border-2 border-slate-300 rounded-[24px] p-6 flex flex-col justify-between space-y-5 shadow-sm transition-all"
               >
                 <div className="flex items-center justify-between w-full">
                   {item.logo}
@@ -208,95 +208,43 @@ export default function InTheNews() {
         </div>
 
         {/* 3-Column Magazine Card Layout (Desktop >= md) */}
-        <div className="hidden md:grid grid-cols-3 gap-8 text-left w-full">
-          
-          {/* Column 1 */}
-          <div className="flex flex-col space-y-8">
-            {column1.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-white border-2 border-slate-200 rounded-[28px] p-6 md:p-8 flex flex-col space-y-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_20px_40px_rgba(8,32,40,0.04)] hover:border-[#12e9e9] group relative"
-              >
-                <div className="flex items-center justify-between w-full">
-                  {item.logo}
-                  <span className="text-[8px] font-mono font-bold tracking-widest text-slate-400">{item.category}</span>
+        <div className="hidden md:grid grid-cols-3 border-t border-x border-slate-200 text-left w-full">
+          {[
+            column1[0], column2[0], column3[0],
+            column1[1], column2[1], column3[1]
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className={`bg-transparent p-6 md:p-10 transition-all duration-300 hover:bg-[#0b766e]/[0.03] group relative h-full border-b border-slate-200 overflow-hidden ${
+                (idx + 1) % 3 !== 0 ? 'border-r' : ''
+              }`}
+            >
+              {/* Sleek bottom accent line on hover */}
+              <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#0b766e] group-hover:w-full transition-all duration-500 ease-out" />
+
+              <div className="w-full h-full flex flex-col space-y-6">
+                <div className="flex items-center justify-between gap-4 w-full min-h-[44px]">
+                  <div className="shrink-0 max-w-[62%] transition-transform duration-300 group-hover:scale-[1.03]">
+                    {item.logo}
+                  </div>
+                  <span className="text-[8px] font-mono font-bold tracking-widest text-slate-400 group-hover:text-[#0b766e] transition-colors shrink-0 text-right uppercase">{item.category}</span>
                 </div>
-                <p className="text-lg md:text-xl font-bold leading-relaxed font-serif italic text-slate-700 hover:text-[#0b766e] transition-colors duration-300">
+                <p className="text-lg md:text-xl font-bold leading-relaxed font-serif italic text-slate-700 group-hover:text-[#0b766e] transition-colors duration-300 flex-grow">
                   "{item.quote}"
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 mt-auto">
                   <a href="#" className="inline-flex items-center text-[9px] font-mono font-black tracking-widest text-slate-400 group-hover:text-[#0b766e] transition-colors uppercase">
                     <span>Read Release</span>
-                    <span className="text-[7px] ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+                    <span className="text-[7px] ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                   </a>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Column 2 */}
-          <div className="flex flex-col space-y-8">
-            {column2.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 + 0.05 }}
-                className="bg-white border-2 border-slate-200 rounded-[28px] p-6 md:p-8 flex flex-col space-y-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_20px_40px_rgba(8,32,40,0.04)] hover:border-[#12e9e9] group relative"
-              >
-                <div className="flex items-center justify-between w-full">
-                  {item.logo}
-                  <span className="text-[8px] font-mono font-bold tracking-widest text-slate-400">{item.category}</span>
-                </div>
-                <p className="text-lg md:text-xl font-bold leading-relaxed font-serif italic text-slate-700 hover:text-[#0b766e] transition-colors duration-300">
-                  "{item.quote}"
-                </p>
-                <div className="pt-2">
-                  <a href="#" className="inline-flex items-center text-[9px] font-mono font-black tracking-widest text-slate-400 group-hover:text-[#0b766e] transition-colors uppercase">
-                    <span>Read Release</span>
-                    <span className="text-[7px] ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Column 3 */}
-          <div className="flex flex-col space-y-8">
-            {column3.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 + 0.1 }}
-                className="bg-white border-2 border-slate-200 rounded-[28px] p-6 md:p-8 flex flex-col space-y-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_20px_40px_rgba(8,32,40,0.04)] hover:border-[#12e9e9] group relative"
-              >
-                <div className="flex items-center justify-between w-full">
-                  {item.logo}
-                  <span className="text-[8px] font-mono font-bold tracking-widest text-slate-400">{item.category}</span>
-                </div>
-                <p className="text-lg md:text-xl font-bold leading-relaxed font-serif italic text-slate-700 hover:text-[#0b766e] transition-colors duration-300">
-                  "{item.quote}"
-                </p>
-                <div className="pt-2">
-                  <a href="#" className="inline-flex items-center text-[9px] font-mono font-black tracking-widest text-slate-400 group-hover:text-[#0b766e] transition-colors uppercase">
-                    <span>Read Release</span>
-                    <span className="text-[7px] ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
     </section>
   );
 }
+

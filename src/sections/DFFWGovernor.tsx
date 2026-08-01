@@ -50,7 +50,7 @@ export default function DFFWGovernor() {
         {/* Right Side: Message Card (col-span-7) */}
         <div className="lg:col-span-7 space-y-6 w-full">
           <div className="text-left space-y-2">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight gov-sec-title">
+            <h2 className="text-3xl md:text-4xl font-[800] tracking-tight leading-tight gov-sec-title">
               <span className="text-[#12e8e8]">/</span> A Message from the Governor
             </h2>
           </div>
@@ -90,3 +90,4 @@ export default function DFFWGovernor() {
     </section>
   );
 }
+

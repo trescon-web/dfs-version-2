@@ -173,7 +173,7 @@ export default function ImpactSection() {
             <Shield className="w-3.5 h-3.5 text-[#12e8e8]" />
             <span>SUMMIT PERFORMANCE</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white" style={{ color: "#ffffff" }}>
+          <h2 className="text-4xl md:text-5xl font-[800] tracking-tight leading-tight text-white" style={{ color: "#ffffff" }}>
             Impact at a glance
           </h2>
           <p className="text-sm md:text-base leading-relaxed max-w-xl font-semibold metric-subheading" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
@@ -230,3 +230,4 @@ export default function ImpactSection() {
     </section>
   );
 }
+

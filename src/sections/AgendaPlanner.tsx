@@ -115,7 +115,7 @@ export default function AgendaPlanner() {
           <span className="font-mono text-xs uppercase tracking-widest text-purple-accent font-semibold">
             04 // Interactive Timelines
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-[800] tracking-tight text-gradient-white mt-4">
             Custom-Built Agenda Planner
           </h2>
           <p className="text-sm md:text-base text-foreground/60 mt-4 leading-relaxed">
@@ -208,7 +208,7 @@ export default function AgendaPlanner() {
               <div className="glass-panel p-6 rounded-2xl border border-emerald-accent/30 bg-purple-glow/5 flex flex-col space-y-4">
                 <div className="flex items-center space-x-2 text-emerald-accent">
                   <Sparkles className="w-4 h-4 animate-pulse" />
-                  <h3 className="text-xs uppercase tracking-widest font-black">AI Schedule Recommendations</h3>
+                  <h3 className="text-xs uppercase tracking-widest font-[800]">AI Schedule Recommendations</h3>
                 </div>
                 <p className="text-[11px] text-foreground/50 leading-relaxed">
                   Based on your saved tracks, we recommend booking these high-value sessions:
@@ -383,3 +383,4 @@ export default function AgendaPlanner() {
     </section>
   );
 }
+

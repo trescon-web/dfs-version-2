@@ -270,7 +270,7 @@ export default function SponsorsTierGrid() {
             
             {/* Tier Title */}
             <div className="flex flex-col items-center space-y-3">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider font-sans spons-section-title">
+              <h3 className="text-xl md:text-2xl font-[800] uppercase tracking-wider font-sans spons-section-title">
                 {section.title}
               </h3>
               <div className="w-16 h-1 bg-gradient-to-r from-[#12e8e8] to-[#c5a880] rounded-full" />
@@ -310,3 +310,4 @@ export default function SponsorsTierGrid() {
     </section>
   );
 }
+
