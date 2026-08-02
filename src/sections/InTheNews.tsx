@@ -16,7 +16,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_cnbc.png")} 
           alt="CNBC Logo" 
-          className="h-8 md:h-10 w-auto max-w-[160px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -27,7 +27,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_khaleej_times.png")} 
           alt="Khaleej Times Logo" 
-          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -41,7 +41,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_fintech_times.png")} 
           alt="The Fintech Times Logo" 
-          className="h-8 md:h-10 w-auto max-w-[180px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -52,7 +52,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_gulf_news.png")} 
           alt="Gulf News Logo" 
-          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -64,9 +64,9 @@ export default function InTheNews() {
       category: "ENTREPRENEUR PROFILE",
       logo: (
         <img 
-          src={getAssetPath("/images/news_entrepreneur.png")} 
+          src={getAssetPath("/images/entrepreneur-logo.jpg")} 
           alt="Entrepreneur Middle East Logo" 
-          className="h-10 md:h-14 w-auto max-w-[210px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -75,9 +75,9 @@ export default function InTheNews() {
       category: "ECONOMIC TIMES ANALYTICS",
       logo: (
         <img 
-          src={getAssetPath("/images/news_economic_times.png")} 
+          src={getAssetPath("/images/et.png")} 
           alt="The Economic Times Logo" 
-          className="h-8 md:h-10 w-auto max-w-[170px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },

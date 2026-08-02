@@ -9,6 +9,7 @@ import searchIndex from "@/data/searchIndex.json";
 interface SearchResult {
   title: string;
   href: string;
+  category?: string;
   snippet: string;
 }
 
@@ -22,6 +23,20 @@ export default function Navbar() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
+  // Global Keyboard Shortcuts (Cmd+K / Ctrl+K / Esc)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      } else if (e.key === "Escape" && searchOpen) {
+        setSearchOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [searchOpen]);
+
   useEffect(() => {
     if (!searchVal.trim()) {
       setSearchResults([]);
@@ -34,7 +49,7 @@ export default function Navbar() {
 
     for (const item of searchIndex) {
       const titleLower = item.title.toLowerCase();
-      const combinedText = (item.title + " " + item.texts.join(" ")).toLowerCase();
+      const combinedText = (item.title + " " + (item.texts ? item.texts.join(" ") : "")).toLowerCase();
 
       // Check if query or words match
       const allWordsMatch = queryWords.every(w => combinedText.includes(w));
@@ -53,10 +68,11 @@ export default function Navbar() {
       }
 
       // Find best snippet
-      let bestSnippet = item.texts[0] || item.title;
+      const texts = item.texts || [];
+      let bestSnippet = texts[0] || item.title;
       let maxSnippetMatches = 0;
 
-      for (const txt of item.texts) {
+      for (const txt of texts) {
         const txtLower = txt.toLowerCase();
         let matches = 0;
         for (const w of queryWords) {
@@ -86,12 +102,13 @@ export default function Navbar() {
         item: {
           title: item.title,
           href: item.href,
+          category: (item as any).category || "PAGE",
           snippet: formattedSnippet
         }
       });
     }
 
-    // Sort by score descending and take top 10
+    // Sort by score descending and take top 12
     scoredResults.sort((a, b) => b.score - a.score);
     setSearchResults(scoredResults.slice(0, 12).map(r => r.item));
   }, [searchVal]);
@@ -654,29 +671,68 @@ export default function Navbar() {
                   </button>
                 </form>
 
-                {/* Dynamic Search Results Panel */}
-                {searchVal.trim() && (
-                  <div className="max-h-[420px] overflow-y-auto divide-y divide-slate-100 p-2 bg-slate-50">
+                {/* Dynamic Search Results & Quick Pages Panel */}
+                {!searchVal.trim() ? (
+                  <div className="p-4 bg-slate-50 border-t border-slate-100">
+                    <span className="block text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase mb-3 text-left">
+                      QUICK PAGE NAVIGATION
+                    </span>
+                    <div className="grid grid-cols-2 gap-2 text-left">
+                      {[
+                        { title: "Featured Speakers", href: "/speakers/", desc: "300+ financial leaders" },
+                        { title: "Exhibitors & Arena", href: "/exhibitors/", desc: "200+ tech companies" },
+                        { title: "FinTech Launchpad", href: "/fintech-launchpad/", desc: "$500k Pitch World Cup" },
+                        { title: "Sponsors & Partners", href: "/sponsors/", desc: "DIFC, Visa, Emirates NBD" },
+                        { title: "Future Finance Week", href: "/dubai-future-finance-week/", desc: "Week-long side events" },
+                        { title: "Roundtables", href: "/roundtables-workshops/", desc: "Closed-door discussions" },
+                        { title: "Buy Passes & Register", href: "/get-involved/", desc: "Tickets & VIP badges" },
+                        { title: "About DFS & D33 Vision", href: "/about/", desc: "Summit overview & pillars" },
+                      ].map((item, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() => handleSelectResult(item.href)}
+                          className="flex items-center space-x-2.5 p-2.5 rounded-xl hover:bg-white border border-transparent hover:border-slate-200 transition-all cursor-pointer group"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#0f766e] group-hover:scale-125 transition-transform shrink-0" />
+                          <div>
+                            <span className="block text-xs font-bold text-slate-800 group-hover:text-[#0f766e] transition-colors">
+                              {item.title}
+                            </span>
+                            <span className="block text-[10px] text-slate-500 font-medium truncate">
+                              {item.desc}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="max-h-[420px] overflow-y-auto divide-y divide-slate-100 p-2 bg-slate-50 text-left">
                     {searchResults.length === 0 ? (
-                      <div className="p-6 text-center text-slate-400 text-xs font-mono">
-                        No results matched "{searchVal}"
+                      <div className="p-8 text-center text-slate-400 text-xs font-mono">
+                        No pages or sections matched "{searchVal}"
                       </div>
                     ) : (
                       searchResults.map((res, index) => (
                         <div
                           key={index}
                           onClick={() => handleSelectResult(res.href)}
-                          className="flex flex-col p-3.5 hover:bg-white rounded-xl transition-all text-left space-y-1 group cursor-pointer shadow-none hover:shadow-sm"
+                          className="flex flex-col p-3.5 hover:bg-white rounded-xl transition-all space-y-1.5 group cursor-pointer shadow-none hover:shadow-sm"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-mono font-bold uppercase text-[#0f766e] tracking-wider">
-                              {res.title}
-                            </span>
-                            <span className="text-[10px] font-bold text-slate-400 group-hover:text-[#0f766e] transition-colors">
-                              Go to Section ↗
+                            <div className="flex items-center space-x-2">
+                              <span className="px-2 py-0.5 rounded-md text-[9px] font-mono font-bold tracking-widest bg-[#0f766e]/10 text-[#0f766e] uppercase">
+                                {res.category || "PAGE"}
+                              </span>
+                              <span className="text-xs font-bold text-slate-900 group-hover:text-[#0f766e] transition-colors">
+                                {res.title}
+                              </span>
+                            </div>
+                            <span className="text-[10px] font-bold text-slate-400 group-hover:text-[#0f766e] transition-colors shrink-0">
+                              Go to Page ↗
                             </span>
                           </div>
-                          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-medium">
+                          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-medium pl-1">
                             {res.snippet}
                           </p>
                         </div>

@@ -13,56 +13,64 @@ export default function LeadershipSlider() {
       img: getAssetPath("/images/exclusive_ecosystem_events_clean.jpg"),
       tagline: "PILLAR 01",
       desc: "Invite-only sessions and workshops for decision-makers.",
-      link: getAssetPath("/about/")
+      link: getAssetPath("/about/"),
+      pos: "center 20%"
     },
     {
       title: "Conference programme",
-      img: getAssetPath("/images/dfs_conference_programme_clean.jpg"),
+      img: getAssetPath("/images/dfs_conference_programme_stage.jpg"),
       tagline: "PILLAR 02",
       desc: "Keynotes and panels tackling global finance.",
-      link: getAssetPath("/speakers/")
+      link: getAssetPath("/speakers/"),
+      pos: "center 20%"
     },
     {
       title: "The innovation arena",
       img: getAssetPath("/images/innovation_arena_clean.jpg"),
       tagline: "PILLAR 03",
       desc: "Breakthrough technologies redefining financial services.",
-      link: getAssetPath("/exhibitors/")
+      link: getAssetPath("/exhibitors/"),
+      pos: "center 20%"
     },
     {
       title: "Strategic networking",
       img: getAssetPath("/images/dfs_networking_hall.jpg"),
       tagline: "PILLAR 04",
       desc: "Connect with leaders, investors, and innovators.",
-      link: getAssetPath("/get-involved/")
+      link: getAssetPath("/get-involved/"),
+      pos: "center 20%"
     },
     {
       title: "FinTech launchpad",
-      img: getAssetPath("/images/stage-innovation.png"),
+      img: getAssetPath("/images/dfs_launchpad_session.jpg"),
       tagline: "PILLAR 05",
       desc: "Announcements, innovations, and key connections.",
-      link: getAssetPath("/fintech-launchpad/")
+      link: getAssetPath("/fintech-launchpad/"),
+      pos: "center 20%"
     },
     {
       title: "DFS dialogues",
       img: getAssetPath("/images/dfs_dialogues_clean.jpg"),
       tagline: "PILLAR 06",
       desc: "Closed-door discussions with policymakers and C-suite.",
-      link: getAssetPath("/roundtables-workshops/")
+      link: getAssetPath("/roundtables-workshops/"),
+      pos: "center 20%"
     },
     {
       title: "MOUs and partnerships",
       img: getAssetPath("/images/mous_partnerships_clean.jpg"),
       tagline: "PILLAR 07",
       desc: "High-impact alliances transforming FinTech.",
-      link: getAssetPath("/get-involved/")
+      link: getAssetPath("/get-involved/"),
+      pos: "center 12%"
     },
     {
       title: "FinTech World Cup grand finale",
       img: getAssetPath("/images/fintech_world_cup_winners.jpg"),
       tagline: "PILLAR 08",
       desc: "Top start-ups battle for global recognition.",
-      link: getAssetPath("/fintech-launchpad/")
+      link: getAssetPath("/fintech-launchpad/"),
+      pos: "center 20%"
     },
   ];
 
@@ -175,7 +183,7 @@ export default function LeadershipSlider() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center",
+                  objectPosition: card.pos || "center 20%",
                   display: "block",
                 }}
               />
