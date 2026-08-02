@@ -1472,3 +1472,58 @@ svg path[fill="white"], svg path[fill="#FFF"], svg path[fill="#ffffff"] {
 #global-sticky-bottom-banner svg path {
   fill: currentColor !important;
 }
+
+/* -------------------------------------------------------------
+   News Section Publisher Logo Classes (Reflected in Git & Build)
+------------------------------------------------------------- */
+.news-logo-cnbc {
+  height: 24px !important;
+  width: auto !important;
+  max-width: 110px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.news-logo-khaleej-times {
+  height: 22px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.news-logo-fintech-times {
+  height: 20px !important;
+  width: auto !important;
+  max-width: 125px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.news-logo-gulf-news {
+  height: 22px !important;
+  width: auto !important;
+  max-width: 115px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.news-logo-entrepreneur {
+  height: 26px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.news-logo-economic-times {
+  height: 22px !important;
+  width: auto !important;
+  max-width: 115px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+@media (min-width: 768px) {
+  .news-logo-cnbc { height: 28px !important; max-width: 125px !important; }
+  .news-logo-khaleej-times { height: 26px !important; max-width: 135px !important; }
+  .news-logo-fintech-times { height: 24px !important; max-width: 140px !important; }
+  .news-logo-gulf-news { height: 26px !important; max-width: 130px !important; }
+  .news-logo-entrepreneur { height: 30px !important; max-width: 135px !important; }
+  .news-logo-economic-times { height: 26px !important; max-width: 130px !important; }
+}

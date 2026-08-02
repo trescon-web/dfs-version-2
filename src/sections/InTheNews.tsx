@@ -133,60 +133,7 @@ export default function InTheNews() {
   return (
     <section id="in-the-news" className="relative py-12 md:py-16 overflow-hidden bg-white border-t border-slate-100">
       
-      {/* Dedicated Separate CSS Classes for Reduced News Section Logos */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .news-logo-cnbc {
-          height: 24px;
-          width: auto;
-          max-width: 110px;
-          object-fit: contain;
-          object-position: left center;
-        }
-        .news-logo-khaleej-times {
-          height: 22px;
-          width: auto;
-          max-width: 120px;
-          object-fit: contain;
-          object-position: left center;
-        }
-        .news-logo-fintech-times {
-          height: 20px;
-          width: auto;
-          max-width: 125px;
-          object-fit: contain;
-          object-position: left center;
-        }
-        .news-logo-gulf-news {
-          height: 22px;
-          width: auto;
-          max-width: 115px;
-          object-fit: contain;
-          object-position: left center;
-        }
-        .news-logo-entrepreneur {
-          height: 26px;
-          width: auto;
-          max-width: 120px;
-          object-fit: contain;
-          object-position: left center;
-        }
-        .news-logo-economic-times {
-          height: 22px;
-          width: auto;
-          max-width: 115px;
-          object-fit: contain;
-          object-position: left center;
-        }
-
-        @media (min-width: 768px) {
-          .news-logo-cnbc { height: 28px; max-width: 125px; }
-          .news-logo-khaleej-times { height: 26px; max-width: 135px; }
-          .news-logo-fintech-times { height: 24px; max-width: 140px; }
-          .news-logo-gulf-news { height: 26px; max-width: 130px; }
-          .news-logo-entrepreneur { height: 30px; max-width: 135px; }
-          .news-logo-economic-times { height: 26px; max-width: 130px; }
-        }
-      `}} />
+      {/* Subtle layout dots accent */}
 
       {/* Subtle layout dots accent */}
       <div className="absolute top-8 left-12 w-2 h-2 rounded-full bg-slate-200 pointer-events-none" />
