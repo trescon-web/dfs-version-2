@@ -16,7 +16,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_cnbc.png")} 
           alt="CNBC Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="news-logo-cnbc" 
         />
       ),
     },
@@ -27,7 +27,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_khaleej_times.png")} 
           alt="Khaleej Times Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="news-logo-khaleej-times" 
         />
       ),
     },
@@ -41,7 +41,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_fintech_times.png")} 
           alt="The Fintech Times Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="news-logo-fintech-times" 
         />
       ),
     },
@@ -52,7 +52,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_gulf_news.png")} 
           alt="Gulf News Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="news-logo-gulf-news" 
         />
       ),
     },
@@ -66,7 +66,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/entrepreneur-logo.jpg")} 
           alt="Entrepreneur Middle East Logo" 
-          className="h-14 md:h-16 max-h-[58px] w-auto max-w-full object-contain object-left scale-[1.7] origin-left my-1" 
+          className="news-logo-entrepreneur" 
         />
       ),
     },
@@ -77,7 +77,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/et.png")} 
           alt="The Economic Times Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="news-logo-economic-times" 
         />
       ),
     },
@@ -133,6 +133,61 @@ export default function InTheNews() {
   return (
     <section id="in-the-news" className="relative py-12 md:py-16 overflow-hidden bg-white border-t border-slate-100">
       
+      {/* Dedicated CSS Classes for 100% News Section Logos */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .news-logo-cnbc {
+          height: 42px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+        .news-logo-khaleej-times {
+          height: 44px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+        .news-logo-fintech-times {
+          height: 42px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+        .news-logo-gulf-news {
+          height: 42px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+        .news-logo-entrepreneur {
+          height: 48px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+        .news-logo-economic-times {
+          height: 42px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          object-position: left center;
+        }
+
+        @media (min-width: 768px) {
+          .news-logo-cnbc { height: 48px; }
+          .news-logo-khaleej-times { height: 50px; }
+          .news-logo-fintech-times { height: 48px; }
+          .news-logo-gulf-news { height: 48px; }
+          .news-logo-entrepreneur { height: 54px; }
+          .news-logo-economic-times { height: 48px; }
+        }
+      `}} />
+
       {/* Subtle layout dots accent */}
       <div className="absolute top-8 left-12 w-2 h-2 rounded-full bg-slate-200 pointer-events-none" />
       <div className="absolute bottom-8 right-12 w-2 h-2 rounded-full bg-slate-200 pointer-events-none" />
