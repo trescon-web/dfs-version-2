@@ -8,6 +8,7 @@ export default function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Track the scroll progress through the entire section (from entering viewport to leaving viewport)
   const { scrollYProgress } = useScroll({
@@ -17,7 +18,7 @@ export default function VideoSection() {
 
   // Apple-style scroll animation:
   // Starts small (65% width, 36px rounded corners), expands to 100% full screen width when centered,
-  // and shrinks back to small (65% width, 36px rounded corners) when scrolling up or down past the section!
+  // and expands to 100% on hover!
   const width = useTransform(scrollYProgress, [0, 0.5, 1], ["65%", "100%", "65%"]);
   const borderRadius = useTransform(scrollYProgress, [0, 0.5, 1], ["36px", "0px", "36px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0.65, 0.95, 1, 0.95, 0.65]);
@@ -74,15 +75,18 @@ export default function VideoSection() {
         </h2>
       </div>
 
-      {/* Scroll Expanding Full Screen Video Frame */}
+      {/* Scroll & Hover Expanding Full Screen Video Frame */}
       <div className="w-full flex justify-center items-center relative z-10 px-0">
         <motion.div
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           style={{
-            width,
-            borderRadius,
-            opacity
+            width: isHovered ? "100%" : width,
+            borderRadius: isHovered ? "0px" : borderRadius,
+            opacity,
+            transition: "width 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
           }}
-          className="relative overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.85)] border-y border-white/10 bg-[#06131f] group transition-all duration-500 hover:border-[#12e9e9]/30"
+          className="relative overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.85)] border-y border-white/10 bg-[#06131f] group hover:border-[#12e9e9]/30 cursor-pointer"
         >
           <video
             ref={videoRef}
