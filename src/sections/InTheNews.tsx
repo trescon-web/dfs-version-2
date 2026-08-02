@@ -133,58 +133,58 @@ export default function InTheNews() {
   return (
     <section id="in-the-news" className="relative py-12 md:py-16 overflow-hidden bg-white border-t border-slate-100">
       
-      {/* Dedicated CSS Classes for 100% News Section Logos */}
+      {/* Dedicated CSS Classes for Balanced 100% News Section Logos */}
       <style dangerouslySetInnerHTML={{__html: `
         .news-logo-cnbc {
-          height: 42px;
+          height: 32px;
           width: auto;
-          max-width: 100%;
+          max-width: 140px;
           object-fit: contain;
           object-position: left center;
         }
         .news-logo-khaleej-times {
-          height: 44px;
+          height: 32px;
           width: auto;
-          max-width: 100%;
+          max-width: 150px;
           object-fit: contain;
           object-position: left center;
         }
         .news-logo-fintech-times {
-          height: 42px;
+          height: 30px;
           width: auto;
-          max-width: 100%;
+          max-width: 160px;
           object-fit: contain;
           object-position: left center;
         }
         .news-logo-gulf-news {
-          height: 42px;
+          height: 30px;
           width: auto;
-          max-width: 100%;
+          max-width: 145px;
           object-fit: contain;
           object-position: left center;
         }
         .news-logo-entrepreneur {
-          height: 48px;
+          height: 36px;
           width: auto;
-          max-width: 100%;
+          max-width: 150px;
           object-fit: contain;
           object-position: left center;
         }
         .news-logo-economic-times {
-          height: 42px;
+          height: 30px;
           width: auto;
-          max-width: 100%;
+          max-width: 140px;
           object-fit: contain;
           object-position: left center;
         }
 
         @media (min-width: 768px) {
-          .news-logo-cnbc { height: 48px; }
-          .news-logo-khaleej-times { height: 50px; }
-          .news-logo-fintech-times { height: 48px; }
-          .news-logo-gulf-news { height: 48px; }
-          .news-logo-entrepreneur { height: 54px; }
-          .news-logo-economic-times { height: 48px; }
+          .news-logo-cnbc { height: 36px; max-width: 155px; }
+          .news-logo-khaleej-times { height: 36px; max-width: 165px; }
+          .news-logo-fintech-times { height: 34px; max-width: 175px; }
+          .news-logo-gulf-news { height: 34px; max-width: 160px; }
+          .news-logo-entrepreneur { height: 40px; max-width: 165px; }
+          .news-logo-economic-times { height: 34px; max-width: 155px; }
         }
       `}} />
 
