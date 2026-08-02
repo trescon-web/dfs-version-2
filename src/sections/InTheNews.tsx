@@ -16,7 +16,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_cnbc.png")} 
           alt="CNBC Logo" 
-          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
+          className="h-8 md:h-[34px] w-[64%] max-w-[64%] object-contain object-left" 
         />
       ),
     },
