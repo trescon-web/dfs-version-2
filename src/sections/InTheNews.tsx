@@ -16,7 +16,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_cnbc.png")} 
           alt="CNBC Logo" 
-          className="h-5 md:h-6 max-h-[24px] w-auto max-w-[130px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -27,7 +27,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_khaleej_times.png")} 
           alt="Khaleej Times Logo" 
-          className="h-6 md:h-7 max-h-[28px] w-auto max-w-[150px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -41,7 +41,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_fintech_times.png")} 
           alt="The Fintech Times Logo" 
-          className="h-6 md:h-7 max-h-[28px] w-auto max-w-[150px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -52,7 +52,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/news_gulf_news.png")} 
           alt="Gulf News Logo" 
-          className="h-6 md:h-7 max-h-[28px] w-auto max-w-[140px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
@@ -66,7 +66,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/entrepreneur-logo.jpg")} 
           alt="Entrepreneur Middle East Logo" 
-          className="h-6 md:h-7 max-h-[28px] w-auto max-w-[150px] object-contain object-left" 
+          className="h-14 md:h-16 max-h-[58px] w-auto max-w-full object-contain object-left scale-[1.7] origin-left my-1" 
         />
       ),
     },
@@ -77,7 +77,7 @@ export default function InTheNews() {
         <img 
           src={getAssetPath("/images/et.png")} 
           alt="The Economic Times Logo" 
-          className="h-6 md:h-7 max-h-[28px] w-auto max-w-[150px] object-contain object-left" 
+          className="h-10 md:h-12 w-auto max-w-full object-contain object-left" 
         />
       ),
     },
